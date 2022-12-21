@@ -1,0 +1,20 @@
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\bin\Debug\Anh Coffee.exe.config
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\bin\Debug\Anh Coffee.exe
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\bin\Debug\Anh Coffee.pdb
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\bin\Debug\EntityFramework.dll
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\bin\Debug\EntityFramework.SqlServer.dll
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\bin\Debug\Guna.UI2.dll
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\bin\Debug\EntityFramework.xml
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\bin\Debug\EntityFramework.SqlServer.xml
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.AssemblyReference.cache
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.SuggestedBindingRedirects.cache
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.Properties.Resources.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmLogin.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.MDIMain.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.GenerateResource.cache
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.CoreCompileInputs.cache
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.CopyComplete
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.exe
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.pdb
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmMain.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.Table.resources
