@@ -27,7 +27,7 @@ namespace Anh_Coffee.View
             {
                 if (accountBUS.GetAccount(un, pw) != null)
                 {
-                    accountBUS.CurrentAccount = un;
+                    AccountBUS.currentAccount = un;
                     MessageBox.Show("Đăng nhập thành công!");
                     MDIMain mdi = new MDIMain();
                     this.Hide();

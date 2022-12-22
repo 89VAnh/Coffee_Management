@@ -18,3 +18,5 @@ D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.exe
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.pdb
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmMain.resources
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.Table.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmAddFood.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmEditFood.resources

@@ -24,7 +24,7 @@ namespace Anh_Coffee.View
             {
 
                 AccountBUS accountBUS = new AccountBUS();
-                accountBUS.CurrentAccount = "";
+                AccountBUS.currentAccount = "";
                 this.Hide();
                 frmLogin f = new frmLogin();
                 f.ShowDialog();

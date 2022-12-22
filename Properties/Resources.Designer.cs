@@ -93,6 +93,16 @@ namespace Anh_Coffee.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check {
+            get {
+                object obj = ResourceManager.GetObject("check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap information {
             get {
                 object obj = ResourceManager.GetObject("information", resourceCulture);
@@ -133,6 +143,16 @@ namespace Anh_Coffee.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap showPw {
             get {
                 object obj = ResourceManager.GetObject("showPw", resourceCulture);
@@ -153,16 +173,6 @@ namespace Anh_Coffee.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap skills1 {
-            get {
-                object obj = ResourceManager.GetObject("skills1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap system {
             get {
                 object obj = ResourceManager.GetObject("system", resourceCulture);
@@ -176,16 +186,6 @@ namespace Anh_Coffee.Properties {
         internal static System.Drawing.Bitmap tableEmpty {
             get {
                 object obj = ResourceManager.GetObject("tableEmpty", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tableEmpty1 {
-            get {
-                object obj = ResourceManager.GetObject("tableEmpty1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

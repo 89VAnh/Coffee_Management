@@ -148,7 +148,7 @@
             // 
             // tàiKhoảnToolStripMenuItem
             // 
-            this.tàiKhoảnToolStripMenuItem.Image = global::Anh_Coffee.Properties.Resources.skills1;
+            this.tàiKhoảnToolStripMenuItem.Image = global::Anh_Coffee.Properties.Resources.skills;
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
             this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.tàiKhoảnToolStripMenuItem.Text = "&Tài khoản";

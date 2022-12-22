@@ -33,8 +33,9 @@
             // 
             // btnTable
             // 
+            this.btnTable.BackColor = System.Drawing.Color.Transparent;
             this.btnTable.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnTable.BorderRadius = 4;
+            this.btnTable.BorderRadius = 8;
             this.btnTable.BorderThickness = 1;
             this.btnTable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -48,19 +49,24 @@
             this.btnTable.Image = global::Anh_Coffee.Properties.Resources.tableEmpty;
             this.btnTable.ImageSize = new System.Drawing.Size(80, 80);
             this.btnTable.Location = new System.Drawing.Point(0, 0);
-            this.btnTable.Margin = new System.Windows.Forms.Padding(10);
+            this.btnTable.Margin = new System.Windows.Forms.Padding(4);
             this.btnTable.Name = "btnTable";
-            this.btnTable.Size = new System.Drawing.Size(120, 120);
+            this.btnTable.Padding = new System.Windows.Forms.Padding(4);
+            this.btnTable.Size = new System.Drawing.Size(130, 130);
             this.btnTable.TabIndex = 0;
             this.btnTable.Text = "Bàn 1";
+            this.btnTable.UseTransparentBackground = true;
             // 
             // Table
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.btnTable);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Table";
-            this.Size = new System.Drawing.Size(120, 120);
+            this.Padding = new System.Windows.Forms.Padding(8);
+            this.Size = new System.Drawing.Size(130, 130);
             this.ResumeLayout(false);
 
         }
