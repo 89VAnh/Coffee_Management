@@ -1,10 +1,5 @@
-﻿using Anh_Coffee.View;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Anh_Coffee.DataAccess
 {
@@ -23,10 +18,6 @@ namespace Anh_Coffee.DataAccess
                 tb.Status = status;
                 db.SaveChanges();
             }
-        }
-        public List<TableCoffee> getEmptyTable()
-        {
-            return db.TableCoffees.Where(x => x.Status == "Trống").ToList();
         }
     }
 }

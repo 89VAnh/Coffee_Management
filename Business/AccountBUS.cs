@@ -1,26 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Anh_Coffee.DataAccess;
+﻿using Anh_Coffee.DataAccess;
 
-namespace Anh_Coffee.BUS
+namespace Anh_Coffee.Business
 {
     public class AccountBUS
     {
         AccountDAO accountDAO = new AccountDAO();
-        public static string currentAccount = "NV01";
-
-        public Account GetAccount(string un)
+        public Account getAccount(string un)
         {
-            return accountDAO.GetAccount(un);
+            return accountDAO.getAccount(un);
         }
-        public Account GetAccount(string un, string pw)
+        public Account getAccount(string un, string pw)
         {
-            return accountDAO.GetAccount(un, pw);
+            return accountDAO.getAccount(un, pw);
+        }
+        public string getStaffIDByUn(string un)
+        {
+            return accountDAO.getStaffIDByUn(un);
+        }
+        public Account getAccountByStaffID(string staffID)
+        {
+            return accountDAO.getAccountByStaffID(staffID);
         }
 
-
+        public void Update(Account account)
+        {
+            accountDAO.Update(account);
+        }
     }
 }

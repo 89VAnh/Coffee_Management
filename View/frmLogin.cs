@@ -1,12 +1,6 @@
-﻿using Anh_Coffee.BUS;
+﻿using Anh_Coffee.Business;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Anh_Coffee.View
@@ -25,9 +19,9 @@ namespace Anh_Coffee.View
             string un = txtUn.Text, pw = txtPw.Text;
             if (un.Length > 0 & un.Length > 0)
             {
-                if (accountBUS.GetAccount(un, pw) != null)
+                if (accountBUS.getAccount(un, pw) != null)
                 {
-                    AccountBUS.currentAccount = un;
+                    StaffBUS.currentStaffID = accountBUS.getStaffIDByUn(un);
                     MessageBox.Show("Đăng nhập thành công!");
                     MDIMain mdi = new MDIMain();
                     this.Hide();
@@ -36,7 +30,7 @@ namespace Anh_Coffee.View
                 }
                 else
                 {
-                    if (accountBUS.GetAccount(un) != null)
+                    if (accountBUS.getAccount(un) != null)
                     {
                         MessageBox.Show("Mật khẩu không chính xác!");
                         txtPw.Focus();

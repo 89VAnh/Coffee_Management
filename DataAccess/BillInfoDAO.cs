@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Anh_Coffee.DataAccess
 {
@@ -23,6 +20,7 @@ namespace Anh_Coffee.DataAccess
         }
         public void Add(BillInfo billInfo)
         {
+            billInfo.Food = db.Foods.Find(billInfo.FoodID);
             db.BillInfoes.Add(billInfo);
             db.SaveChanges();
         }

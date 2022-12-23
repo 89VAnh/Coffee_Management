@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Anh_Coffee.View;
+using System;
 using System.Windows.Forms;
-using Anh_Coffee.View;
 
 namespace Anh_Coffee
 {
@@ -17,7 +14,7 @@ namespace Anh_Coffee
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new frmInfo());
         }
     }
 }
