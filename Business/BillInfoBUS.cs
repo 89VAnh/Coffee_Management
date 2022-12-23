@@ -1,6 +1,5 @@
 ﻿using Anh_Coffee.DataAccess;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Anh_Coffee.Business
 {
@@ -26,18 +25,15 @@ namespace Anh_Coffee.Business
         }
         public void Add(BillInfo billInfo)
         {
-            BillInfo bI = billInfoDAO.GetBillInfoesInBill(billInfo.BillID).SingleOrDefault(x => x.FoodID == billInfo.FoodID);
-            if (bI == null)
-                billInfoDAO.Add(billInfo);
-            else AddAmount(bI.ID, billInfo.Amount, billInfo.Note);
+            billInfoDAO.Add(billInfo);
         }
         public void Update(BillInfo billInfo)
         {
             billInfoDAO.Update(billInfo);
         }
-        public void Delete(int id)
+        public void Delete(BillInfo billInfo)
         {
-            billInfoDAO.Delete(id);
+            billInfoDAO.Delete(billInfo);
         }
     }
 }

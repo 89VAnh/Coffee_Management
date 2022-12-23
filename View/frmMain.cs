@@ -25,7 +25,7 @@ namespace Anh_Coffee.View
         int selectedTableID = 0;
         int selectedBillInfoID = 0;
         List<Food> foodList = new List<Food>();
-        List<BillInfo> billInfoList = new List<BillInfo>();
+        List<BillInfo> billInfoListInSelectedTable = new List<BillInfo>();
         List<TableCoffee> tableList = new List<TableCoffee>();
         public frmMain()
         {
@@ -34,8 +34,7 @@ namespace Anh_Coffee.View
         // Custom function
         private void UpdateDgvBill()
         {
-            billInfoList = billInfoBUS.GetBillInfoesInTable(selectedTableID);
-            dgvBill.DataSource = billInfoList.Select(b => new { b.ID, b.Food.Name, b.Amount, b.Food.Price, Total = b.Amount * b.Food.Price, b.Note }).ToList();
+            dgvBill.DataSource = billInfoListInSelectedTable.Select(b => new { b.ID, b.Food.Name, b.Amount, b.Food.Price, Total = b.Amount * b.Food.Price, b.Note }).ToList();
         }
         private void UpdateDgvFood(List<Food> foods)
         {
@@ -43,13 +42,18 @@ namespace Anh_Coffee.View
         }
         private void setCboChangeTableData()
         {
-
+            cboChangeTable.DataSource = tableList.Where(x => x.Status == "Trống").ToList();
+            cboChangeTable.ValueMember = "ID";
+            cboChangeTable.DisplayMember = "Name";
         }
         private void setTableStatus(int tableID, string status)
         {
             Table tb = flpTable.Controls[tableID - 1] as Table;
-            tb.UpdateStatus(status);
-            tableBUS.setTableStatus(tableID, status);
+            if (status != tb.GetStatus())
+            {
+                tb.UpdateStatus(status);
+                tableBUS.setTableStatus(tableID, status);
+            }
         }
 
         //EventHandler
@@ -68,9 +72,7 @@ namespace Anh_Coffee.View
             cboTable.DisplayMember = "Name";
 
             // cboChangeTable
-            cboChangeTable.DataSource = tableList.Where(x => x.Status == "Trống").ToList();
-            cboChangeTable.ValueMember = "ID";
-            cboChangeTable.DisplayMember = "Name";
+            setCboChangeTableData();
 
             // cboCategoryFood
             cboCategoryFood.DataSource = categoryFoodBUS.getCategoryFoods();
@@ -89,6 +91,7 @@ namespace Anh_Coffee.View
             Guna2Button btn = sender as Guna2Button;
             selectedTableID = (int)btn.Tag;
             cboTable.SelectedValue = selectedTableID;
+            billInfoListInSelectedTable = billInfoBUS.GetBillInfoesInTable(selectedTableID);
             UpdateDgvBill();
             numAmount.Value = 1;
             txtNote.Text = "";
@@ -116,16 +119,6 @@ namespace Anh_Coffee.View
             txtNote.Text = dgvBill.SelectedRows[0].Cells[5].Value.ToString();
         }
 
-        private void btnDel_Click(object sender, EventArgs e)
-        {
-            if (selectedBillInfoID > 0)
-            {
-                billInfoBUS.Delete(selectedBillInfoID);
-                UpdateDgvBill();
-            }
-            else MessageBox.Show("Vui lòng chọn món!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
         private void btnChangeTable_Click(object sender, EventArgs e)
         {
             if (selectedTableID > 0)
@@ -138,16 +131,31 @@ namespace Anh_Coffee.View
                     setCboChangeTableData();
                     MessageBox.Show($"Đã đổi bàn {selectedTableID} => {newTableID} thành công");
                     selectedTableID = newTableID;
+                    billInfoListInSelectedTable = billInfoListInSelectedTable = billInfoBUS.GetBillInfoesInTable(selectedTableID);
+                    UpdateDgvBill();
                 }
                 else MessageBox.Show("Bàn được chọn không hợp lệ!");
             else MessageBox.Show("Vui lòng lựa chọn bàn!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+        //Del
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (selectedBillInfoID > 0)
+            {
+                BillInfo billInfo = billInfoListInSelectedTable.SingleOrDefault(x => x.ID == selectedBillInfoID);
+                billInfoBUS.Delete(billInfo);
+                billInfoListInSelectedTable.Remove(billInfo);
+                UpdateDgvBill();
+            }
+            else MessageBox.Show("Vui lòng chọn món!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        //Update
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (selectedBillInfoID > 0)
                 if (MessageBox.Show("Xác nhận đổi số lượng và ghi chú", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    BillInfo bI = billInfoList.SingleOrDefault(x => x.ID == selectedBillInfoID);
+                    BillInfo bI = billInfoListInSelectedTable.SingleOrDefault(x => x.ID == selectedBillInfoID);
                     bI.Amount = (int)numAmount.Value;
                     bI.Note = txtNote.Text;
                     billInfoBUS.Update(bI);
@@ -157,6 +165,7 @@ namespace Anh_Coffee.View
         }
 
         //Food
+        //Add
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (selectedTableID > 0)
@@ -174,9 +183,20 @@ namespace Anh_Coffee.View
                         id = bill.ID;
                     BillInfo newbI = new BillInfo { ID = billInfoBUS.getNewID(), BillID = id, FoodID = selectedFoodID, Amount = (int)numAmount.Value, Note = txtNote.Text };
 
-                    billInfoBUS.Add(newbI);
                     MessageBox.Show($"Đã thêm vào bàn {selectedTableID} : {newbI.Amount} {foodList.SingleOrDefault(f => f.ID == newbI.FoodID).Name}");
+
+                    BillInfo billInfo = billInfoListInSelectedTable.SingleOrDefault(x => x.BillID == newbI.BillID && x.FoodID == newbI.FoodID);
+                    if (billInfo == null)
+                    {
+                        billInfoBUS.Add(newbI);
+                        billInfoListInSelectedTable.Add(newbI);
+                    }
+                    else
+                    {
+                        billInfoBUS.AddAmount(billInfo.ID, newbI.Amount, newbI.Note);
+                    }
                     UpdateDgvBill();
+
                     setTableStatus(selectedTableID, "Có người");
                     setCboChangeTableData();
                 }

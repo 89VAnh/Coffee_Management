@@ -41,9 +41,9 @@ namespace Anh_Coffee.DataAccess
             bI.Note = billInfo.Note;
             db.SaveChanges();
         }
-        public void Delete(int id)
+        public void Delete(BillInfo billInfo)
         {
-            db.BillInfoes.Remove(db.BillInfoes.Find(id));
+            db.BillInfoes.Remove(billInfo);
             db.SaveChanges();
         }
     }

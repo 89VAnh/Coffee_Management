@@ -11,9 +11,18 @@ namespace Anh_Coffee.Business
         {
             return foodDAO.getFoods();
         }
-        public List<Food> getFoodsByCategory(int categoryID)
+
+        public void Add(Food food)
         {
-            return foodDAO.getFoodsByCategory(categoryID);
+            foodDAO.Add(food);
+        }
+        public void Update(Food food)
+        {
+            foodDAO.Update(food);
+        }
+        public void Delete(Food food)
+        {
+            foodDAO.Delete(food);
         }
     }
 }
