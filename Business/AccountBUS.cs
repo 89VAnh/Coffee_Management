@@ -1,4 +1,5 @@
 ﻿using Anh_Coffee.DataAccess;
+using System.Collections.Generic;
 
 namespace Anh_Coffee.Business
 {
@@ -21,10 +22,22 @@ namespace Anh_Coffee.Business
         {
             return accountDAO.getAccountByStaffID(staffID);
         }
-
+        public List<Account> getAccounts()
+        {
+            return accountDAO.getAccounts();
+        }
+        public void Add(Account account)
+        {
+            accountDAO.Add(account);
+        }
         public void Update(Account account)
         {
             accountDAO.Update(account);
         }
+        public void Delete(Account account)
+        {
+            accountDAO.Delete(account);
+        }
+
     }
 }

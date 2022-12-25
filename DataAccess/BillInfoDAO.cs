@@ -28,7 +28,10 @@ namespace Anh_Coffee.DataAccess
         {
             BillInfo bI = db.BillInfoes.Find(id);
             bI.Amount += amount;
-            bI.Note += note;
+            if (string.IsNullOrWhiteSpace(bI.Note))
+                bI.Note = note;
+            else
+                bI.Note += ", " + note;
             db.SaveChanges();
         }
 

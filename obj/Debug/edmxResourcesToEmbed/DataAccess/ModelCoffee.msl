@@ -74,7 +74,6 @@
           <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
           <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
           <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
           <ScalarProperty Name="TableID" ColumnName="TableID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>

@@ -24,6 +24,8 @@ namespace Anh_Coffee.View
         int selectedFoodID = 0;
         int selectedTableID = 0;
         int selectedBillInfoID = 0;
+        int totalPrice = 0;
+
         List<Food> foodList = new List<Food>();
         List<BillInfo> billInfoListInSelectedTable = new List<BillInfo>();
         List<TableCoffee> tableList = new List<TableCoffee>();
@@ -99,16 +101,21 @@ namespace Anh_Coffee.View
         private void dgvBill_DataSourceChanged(object sender, EventArgs e)
         {
             if (dgvBill.Rows.Count == 0)
-                txtTotalPrice.Text = "0";
+            {
+                numTotalPrice.Value = 0;
+                totalPrice = 0;
+            }
             else
                 try
                 {
                     int sum = 0;
                     foreach (DataGridViewRow r in dgvBill.Rows)
                     {
-                        sum += (int)r.Cells[5].Value;
+                        sum += (int)r.Cells[4].Value;
                     }
-                    txtTotalPrice.Text = sum.ToString();
+                    numTotalPrice.Value = sum;
+                    totalPrice = sum;
+                    Discount();
                 }
                 catch { }
         }
@@ -122,19 +129,20 @@ namespace Anh_Coffee.View
         private void btnChangeTable_Click(object sender, EventArgs e)
         {
             if (selectedTableID > 0)
-                if (billInfoBUS.GetBillInfoesInTable(selectedTableID).Count > 0)
+                if (tableList.SingleOrDefault(x => x.ID == selectedTableID).Status == "Có người")
                 {
                     int newTableID = (int)cboChangeTable.SelectedValue;
                     setTableStatus(selectedTableID, "Trống");
                     setTableStatus(newTableID, "Có người");
-                    billBUS.Update(selectedTableID, newTableID);
+                    billBUS.swapTable(selectedTableID, newTableID);
                     setCboChangeTableData();
                     MessageBox.Show($"Đã đổi bàn {selectedTableID} => {newTableID} thành công");
                     selectedTableID = newTableID;
+                    cboTable.SelectedValue = selectedTableID;
                     billInfoListInSelectedTable = billInfoListInSelectedTable = billInfoBUS.GetBillInfoesInTable(selectedTableID);
                     UpdateDgvBill();
                 }
-                else MessageBox.Show("Bàn được chọn không hợp lệ!");
+                else MessageBox.Show("Không chuyển được bàn đang trống!");
             else MessageBox.Show("Vui lòng lựa chọn bàn!", "Thao tác không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         //Del
@@ -176,7 +184,7 @@ namespace Anh_Coffee.View
                     if (bill == null)
                     {
                         id = billBUS.getNewID();
-                        billBUS.Add(new Bill { ID = id, TableID = selectedTableID, StaffID = StaffBUS.currentStaffID, TotalPrice = 0 });
+                        billBUS.Add(new Bill { ID = id, TableID = selectedTableID, TotalPrice = 0 });
                         bill = billBUS.getBillIDByTableID(selectedTableID);
                     }
                     else
@@ -220,6 +228,8 @@ namespace Anh_Coffee.View
         private void dgvFood_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedFoodID = (int)dgvFood.SelectedRows[0].Cells[0].Value;
+            txtNote.Clear();
+            numAmount.Value = 1;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -230,6 +240,66 @@ namespace Anh_Coffee.View
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) btnSearch_Click(sender, e);
+        }
+
+        private void cboFood_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedFoodID = (int)cboFood.SelectedValue;
+            UpdateDgvFood(foodList.Where(f => f.ID == selectedFoodID).ToList());
+        }
+
+        // Discount
+        private void Discount()
+        {
+            try
+            {
+                int value = totalPrice,
+                    discount = (int)numDiscount.Value;
+
+                switch (cboDiscountType.SelectedIndex)
+                {
+                    case 0: value -= discount * 1000; break;
+                    case 1: value -= value * discount / 100; break;
+                    default: break;
+                }
+                numTotalPrice.Value = value;
+            }
+            catch { }
+        }
+
+        private void cboDiscountType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Discount();
+        }
+
+        private void numDiscount_ValueChanged(object sender, EventArgs e)
+        {
+            Discount();
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            if (selectedTableID > 0)
+            {
+                TableCoffee table = tableList.SingleOrDefault(x => x.ID == selectedTableID);
+                if (table.Status == "Có người")
+                {
+                    string discount = numDiscount.Value.ToString();
+                    if (discount != "0")
+                    {
+                        switch (cboDiscountType.SelectedIndex)
+                        {
+                            case 0: discount += "000 đ"; break;
+                            case 1: discount += " %"; break;
+                            default: break;
+                        }
+                    }
+                    frmBill f = new frmBill(table.Name, billInfoListInSelectedTable, discount, totalPrice, (int)numTotalPrice.Value);
+                    f.ShowDialog();
+                }
+                else MessageBox.Show("Bàn được chọn đang trống!");
+            }
+            else MessageBox.Show("Vui lòng chọn bàn");
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 using Anh_Coffee.Business;
 using Anh_Coffee.DataAccess;
+using Guna.UI2.WinForms;
 using System;
 using System.Windows.Forms;
 
@@ -16,6 +17,36 @@ namespace Anh_Coffee.View
         public frmInfo()
         {
             InitializeComponent();
+        }
+        private bool checkTextBox(Guna2TextBox textBox)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                errorProvider.SetError(textBox, "Vui lòng nhập trường này");
+                return false;
+            }
+            else return true;
+        }
+        private Staff getStaffFromForm()
+        {
+
+            if (checkTextBox(txtStaffID) && checkTextBox(txtName) && checkTextBox(txtPhone) && checkTextBox(txtEmail) && checkTextBox(txtAddress))
+            {
+                Staff staff = new Staff
+                {
+                    ID = txtStaffID.Text,
+                    Name = txtName.Text,
+                    Phone = txtPhone.Text,
+                    Email = txtEmail.Text,
+                    Address = txtAddress.Text,
+                };
+                return staff;
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                return null;
+            }
         }
 
         private void frmInfo_Load(object sender, EventArgs e)
@@ -34,16 +65,21 @@ namespace Anh_Coffee.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Xác nhận lưu thông tin", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            Staff staff = getStaffFromForm();
+            if (staff != null)
             {
-                staffBUS.Update(new Staff { ID = staff.ID, Name = txtName.Text, Phone = txtPhone.Text, Email = txtEmail.Text, Address = txtAddress.Text, PositionID = staff.PositionID });
-                MessageBox.Show("Lưu thành công!");
+                if (MessageBox.Show("Xác nhận lưu thông tin", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    staffBUS.Update(staff);
+                    MessageBox.Show("Lưu thành công!");
+                    frmInfo_Load(sender, e);
+                }
             }
         }
 
         private void btnChangePw_Click(object sender, EventArgs e)
         {
-            if (txtOldPw.Text.Length > 0 && txtNewPw.Text.Length > 0 && txtRePw.Text.Length > 0)
+            if (checkTextBox(txtOldPw) && checkTextBox(txtNewPw) && checkTextBox(txtRePw))
             {
                 if (txtOldPw.Text == account.Password)
                 {

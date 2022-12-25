@@ -12,19 +12,19 @@ namespace Anh_Coffee.DataAccess
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class CoffeeManagementEntities : DbContext
     {
         public CoffeeManagementEntities()
             : base("name=CoffeeManagementEntities")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<BillInfo> BillInfoes { get; set; }
         public virtual DbSet<CategoryFood> CategoryFoods { get; set; }
         public virtual DbSet<Food> Foods { get; set; }

@@ -22,11 +22,9 @@ namespace Anh_Coffee.Business
             return billDAO.getNewID();
         }
 
-        public void Update(int oldTableID, int newTableID)
+        public void swapTable(int oldTableID, int newTableID)
         {
-
-
-            billDAO.UpdateTable(getBillIDByTableID(oldTableID).ID, newTableID);
+            billDAO.swapTable(getBillIDByTableID(oldTableID).ID, newTableID);
         }
     }
 }

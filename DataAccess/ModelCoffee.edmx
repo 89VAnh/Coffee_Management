@@ -19,7 +19,6 @@
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="TableID" Type="int" Nullable="false" />
-          <Property Name="StaffID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Discount" Type="varchar" MaxLength="10" />
           <Property Name="TotalPrice" Type="int" Nullable="false" />
           <Property Name="CheckOut" Type="datetime" />
@@ -90,21 +89,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__StaffID__3A4CA8FD">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Staff">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Bill">
-              <PropertyRef Name="StaffID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Bill__TableID__395884C4">
+        <Association Name="FK__Bill__TableID__498EEC8D">
           <End Role="TableCoffee" Type="Self.TableCoffee" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -118,7 +103,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BillInfo__BillID__3D2915A8">
+        <Association Name="FK__BillInfo__BillID__4C6B5938">
           <End Role="Bill" Type="Self.Bill" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -132,7 +117,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BillInfo__FoodID__3E1D39E1">
+        <Association Name="FK__BillInfo__FoodID__4D5F7D71">
           <End Role="Food" Type="Self.Food" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -187,19 +172,15 @@
             <End Role="Staff" EntitySet="Staff" />
             <End Role="Account" EntitySet="Account" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__StaffID__3A4CA8FD" Association="Self.FK__Bill__StaffID__3A4CA8FD">
-            <End Role="Staff" EntitySet="Staff" />
-            <End Role="Bill" EntitySet="Bill" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Bill__TableID__395884C4" Association="Self.FK__Bill__TableID__395884C4">
+          <AssociationSet Name="FK__Bill__TableID__498EEC8D" Association="Self.FK__Bill__TableID__498EEC8D">
             <End Role="TableCoffee" EntitySet="TableCoffee" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__BillInfo__BillID__3D2915A8" Association="Self.FK__BillInfo__BillID__3D2915A8">
+          <AssociationSet Name="FK__BillInfo__BillID__4C6B5938" Association="Self.FK__BillInfo__BillID__4C6B5938">
             <End Role="Bill" EntitySet="Bill" />
             <End Role="BillInfo" EntitySet="BillInfo" />
           </AssociationSet>
-          <AssociationSet Name="FK__BillInfo__FoodID__3E1D39E1" Association="Self.FK__BillInfo__FoodID__3E1D39E1">
+          <AssociationSet Name="FK__BillInfo__FoodID__4D5F7D71" Association="Self.FK__BillInfo__FoodID__4D5F7D71">
             <End Role="Food" EntitySet="Food" />
             <End Role="BillInfo" EntitySet="BillInfo" />
           </AssociationSet>
@@ -226,7 +207,7 @@
           <Property Name="Amount" Type="Int32" Nullable="false" />
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Food" Relationship="Self.FK__BillInfo__FoodID__32AB8735" FromRole="BillInfo" ToRole="Food" />
-          <NavigationProperty Name="Bill" Relationship="CoffeeManagementModel.FK__BillInfo__BillID__3D2915A8" FromRole="BillInfo" ToRole="Bill" />
+          <NavigationProperty Name="Bill" Relationship="CoffeeManagementModel.FK__BillInfo__BillID__4C6B5938" FromRole="BillInfo" ToRole="Bill" />
         </EntityType>
         <EntityType Name="CategoryFood">
           <Key>
@@ -267,7 +248,6 @@
           <Property Name="PositionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Position" Relationship="Self.FK__Staff__PositionI__208CD6FA" FromRole="Staff" ToRole="Position" />
           <NavigationProperty Name="Accounts" Relationship="CoffeeManagementModel.FK__Account__Staff__25518C17" FromRole="Staff" ToRole="Account" />
-          <NavigationProperty Name="Bills" Relationship="CoffeeManagementModel.FK__Bill__StaffID__3A4CA8FD" FromRole="Staff" ToRole="Bill" />
         </EntityType>
         <EntityType Name="TableCoffee">
           <Key>
@@ -276,7 +256,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Bills" Relationship="CoffeeManagementModel.FK__Bill__TableID__395884C4" FromRole="TableCoffee" ToRole="Bill" />
+          <NavigationProperty Name="Bills" Relationship="CoffeeManagementModel.FK__Bill__TableID__498EEC8D" FromRole="TableCoffee" ToRole="Bill" />
         </EntityType>
         <Association Name="FK__BillInfo__FoodID__32AB8735">
           <End Role="Food" Type="Self.Food" Multiplicity="1">
@@ -340,20 +320,16 @@
             <End Role="Staff" EntitySet="Staffs" />
           </AssociationSet>
           <EntitySet Name="Accounts" EntityType="CoffeeManagementModel.Account" />
-          <EntitySet Name="Bills" EntityType="CoffeeManagementModel.Bill" />
           <AssociationSet Name="FK__Account__Staff__25518C17" Association="CoffeeManagementModel.FK__Account__Staff__25518C17">
             <End Role="Staff" EntitySet="Staffs" />
             <End Role="Account" EntitySet="Accounts" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bill__StaffID__3A4CA8FD" Association="CoffeeManagementModel.FK__Bill__StaffID__3A4CA8FD">
-            <End Role="Staff" EntitySet="Staffs" />
-            <End Role="Bill" EntitySet="Bills" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Bill__TableID__395884C4" Association="CoffeeManagementModel.FK__Bill__TableID__395884C4">
+          <EntitySet Name="Bills" EntityType="CoffeeManagementModel.Bill" />
+          <AssociationSet Name="FK__Bill__TableID__498EEC8D" Association="CoffeeManagementModel.FK__Bill__TableID__498EEC8D">
             <End Role="TableCoffee" EntitySet="TableCoffees" />
             <End Role="Bill" EntitySet="Bills" />
           </AssociationSet>
-          <AssociationSet Name="FK__BillInfo__BillID__3D2915A8" Association="CoffeeManagementModel.FK__BillInfo__BillID__3D2915A8">
+          <AssociationSet Name="FK__BillInfo__BillID__4C6B5938" Association="CoffeeManagementModel.FK__BillInfo__BillID__4C6B5938">
             <End Role="Bill" EntitySet="Bills" />
             <End Role="BillInfo" EntitySet="BillInfoes" />
           </AssociationSet>
@@ -366,20 +342,6 @@
           <Property Name="Password" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="StaffID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Staff" Relationship="CoffeeManagementModel.FK__Account__Staff__25518C17" FromRole="Account" ToRole="Staff" />
-        </EntityType>
-        <EntityType Name="Bill">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="TableID" Type="Int32" Nullable="false" />
-          <Property Name="StaffID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="TotalPrice" Type="Int32" Nullable="false" />
-          <Property Name="CheckOut" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Staff" Relationship="CoffeeManagementModel.FK__Bill__StaffID__3A4CA8FD" FromRole="Bill" ToRole="Staff" />
-          <NavigationProperty Name="TableCoffee" Relationship="CoffeeManagementModel.FK__Bill__TableID__395884C4" FromRole="Bill" ToRole="TableCoffee" />
-          <NavigationProperty Name="BillInfoes" Relationship="CoffeeManagementModel.FK__BillInfo__BillID__3D2915A8" FromRole="Bill" ToRole="BillInfo" />
         </EntityType>
         <Association Name="FK__Account__Staff__25518C17">
           <End Type="CoffeeManagementModel.Staff" Role="Staff" Multiplicity="1">
@@ -395,21 +357,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bill__StaffID__3A4CA8FD">
-          <End Type="CoffeeManagementModel.Staff" Role="Staff" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="CoffeeManagementModel.Bill" Role="Bill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Staff">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Bill">
-              <PropertyRef Name="StaffID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Bill__TableID__395884C4">
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TableID" Type="Int32" Nullable="false" />
+          <Property Name="Discount" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TotalPrice" Type="Int32" Nullable="false" />
+          <Property Name="CheckOut" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TableCoffee" Relationship="CoffeeManagementModel.FK__Bill__TableID__498EEC8D" FromRole="Bill" ToRole="TableCoffee" />
+          <NavigationProperty Name="BillInfoes" Relationship="CoffeeManagementModel.FK__BillInfo__BillID__4C6B5938" FromRole="Bill" ToRole="BillInfo" />
+        </EntityType>
+        <Association Name="FK__Bill__TableID__498EEC8D">
           <End Type="CoffeeManagementModel.TableCoffee" Role="TableCoffee" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -423,7 +383,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BillInfo__BillID__3D2915A8">
+        <Association Name="FK__BillInfo__BillID__4C6B5938">
           <End Type="CoffeeManagementModel.Bill" Role="Bill" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -516,7 +476,6 @@
                 <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
                 <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
                 <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
                 <ScalarProperty Name="TableID" ColumnName="TableID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>

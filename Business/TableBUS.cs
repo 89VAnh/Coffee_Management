@@ -17,6 +17,17 @@ namespace Anh_Coffee.Business
         {
             tableDAO.setTableStatus(tableID, status);
         }
-
+        public void Add(TableCoffee table)
+        {
+            tableDAO.Add(table);
+        }
+        public void Update(TableCoffee table)
+        {
+            tableDAO.Update(table);
+        }
+        public void Delete(TableCoffee table)
+        {
+            tableDAO.Delete(table);
+        }
     }
 }

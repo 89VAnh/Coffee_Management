@@ -14,7 +14,6 @@
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="TableID" Type="int" Nullable="false" />
-    <Property Name="StaffID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Discount" Type="varchar" MaxLength="10" />
     <Property Name="TotalPrice" Type="int" Nullable="false" />
     <Property Name="CheckOut" Type="datetime" />
@@ -85,21 +84,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bill__StaffID__3A4CA8FD">
-    <End Role="Staff" Type="Self.Staff" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Staff">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Bill">
-        <PropertyRef Name="StaffID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Bill__TableID__395884C4">
+  <Association Name="FK__Bill__TableID__498EEC8D">
     <End Role="TableCoffee" Type="Self.TableCoffee" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -113,7 +98,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BillInfo__BillID__3D2915A8">
+  <Association Name="FK__BillInfo__BillID__4C6B5938">
     <End Role="Bill" Type="Self.Bill" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -127,7 +112,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BillInfo__FoodID__3E1D39E1">
+  <Association Name="FK__BillInfo__FoodID__4D5F7D71">
     <End Role="Food" Type="Self.Food" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -182,19 +167,15 @@
       <End Role="Staff" EntitySet="Staff" />
       <End Role="Account" EntitySet="Account" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bill__StaffID__3A4CA8FD" Association="Self.FK__Bill__StaffID__3A4CA8FD">
-      <End Role="Staff" EntitySet="Staff" />
-      <End Role="Bill" EntitySet="Bill" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Bill__TableID__395884C4" Association="Self.FK__Bill__TableID__395884C4">
+    <AssociationSet Name="FK__Bill__TableID__498EEC8D" Association="Self.FK__Bill__TableID__498EEC8D">
       <End Role="TableCoffee" EntitySet="TableCoffee" />
       <End Role="Bill" EntitySet="Bill" />
     </AssociationSet>
-    <AssociationSet Name="FK__BillInfo__BillID__3D2915A8" Association="Self.FK__BillInfo__BillID__3D2915A8">
+    <AssociationSet Name="FK__BillInfo__BillID__4C6B5938" Association="Self.FK__BillInfo__BillID__4C6B5938">
       <End Role="Bill" EntitySet="Bill" />
       <End Role="BillInfo" EntitySet="BillInfo" />
     </AssociationSet>
-    <AssociationSet Name="FK__BillInfo__FoodID__3E1D39E1" Association="Self.FK__BillInfo__FoodID__3E1D39E1">
+    <AssociationSet Name="FK__BillInfo__FoodID__4D5F7D71" Association="Self.FK__BillInfo__FoodID__4D5F7D71">
       <End Role="Food" EntitySet="Food" />
       <End Role="BillInfo" EntitySet="BillInfo" />
     </AssociationSet>

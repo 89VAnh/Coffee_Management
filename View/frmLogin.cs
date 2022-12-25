@@ -17,12 +17,16 @@ namespace Anh_Coffee.View
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string un = txtUn.Text, pw = txtPw.Text;
-            if (un.Length > 0 & un.Length > 0)
+            if (string.IsNullOrWhiteSpace(un) || string.IsNullOrWhiteSpace(pw))
+            {
+                if (string.IsNullOrWhiteSpace(un)) errorProvider.SetError(txtUn, "Vui lòng nhập trường này");
+                if (string.IsNullOrWhiteSpace(pw)) errorProvider.SetError(txtPw, "Vui lòng nhập trường này");
+            }
+            else
             {
                 if (accountBUS.getAccount(un, pw) != null)
                 {
                     StaffBUS.currentStaffID = accountBUS.getStaffIDByUn(un);
-                    MessageBox.Show("Đăng nhập thành công!");
                     MDIMain mdi = new MDIMain();
                     this.Hide();
                     mdi.ShowDialog();
@@ -42,11 +46,6 @@ namespace Anh_Coffee.View
                     }
                 }
             }
-            else
-            {
-                if (un.Length == 0) errorProvider.SetError(txtUn, "Vui lòng nhập trường này");
-                if (pw.Length == 0) errorProvider.SetError(txtPw, "Vui lòng nhập trường này");
-            }
         }
 
         private void txtPw_TextChanged(object sender, EventArgs e)
@@ -64,14 +63,22 @@ namespace Anh_Coffee.View
             isHidePw = !isHidePw;
             if (isHidePw)
             {
-                txtPw.IconRight = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + "Resources/hidePw.png");
+                txtPw.IconRight = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + "Resources/hide-pw.png");
                 txtPw.PasswordChar = '\0';
             }
             else
             {
-                txtPw.IconRight = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + "Resources/showPw.png");
+                txtPw.IconRight = Image.FromFile(Application.StartupPath.Substring(0, Application.StartupPath.Length - 9) + "Resources/show-pw.png");
                 txtPw.PasswordChar = '●';
             }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmRegister f = new frmRegister();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

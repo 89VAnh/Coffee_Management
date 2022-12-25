@@ -9,10 +9,13 @@ D:\Windows form\Quản lý quán Coffee\Anh Coffee\bin\Debug\EntityFramework.Sql
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.AssemblyReference.cache
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.SuggestedBindingRedirects.cache
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.Properties.Resources.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmCategoryFood.resources
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmFood.resources
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmInfo.resources
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmLogin.resources
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmMain.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmStaff.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmTable.resources
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.MDIMain.resources
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.Table.resources
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.GenerateResource.cache
@@ -20,4 +23,3 @@ D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.C
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.CopyComplete
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.exe
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.pdb
-D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmCategoryFood.resources

@@ -23,7 +23,7 @@ namespace Anh_Coffee.DataAccess
             else return db.Bills.ToList().Last().ID + 1;
         }
 
-        public void UpdateTable(int billID, int tableID)
+        public void swapTable(int billID, int tableID)
         {
             Bill b = db.Bills.Find(billID);
             b.TableID = tableID;

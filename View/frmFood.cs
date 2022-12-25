@@ -48,8 +48,7 @@ namespace Anh_Coffee.View
         {
             try
             {
-                List<Food> foods = foodList.Where(f => f.CategoryID == Convert.ToInt32(cboCategoryFood.SelectedValue)).ToList();
-                UpdateDgv(foods);
+                UpdateDgv(foodList.Where(f => f.CategoryID == Convert.ToInt32(cboCategoryFood.SelectedValue)).ToList());
             }
             catch { };
         }
@@ -74,34 +73,42 @@ namespace Anh_Coffee.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Food newFood = new Food
+            if (txtName.Text.Length > 0)
             {
-                ID = foodList.Count + 1,
-                Name = txtName.Text,
-                CategoryID = (int)cboCategoryFood.SelectedValue,
-                Price = (int)numPrice.Value
-            };
-            foodBUS.Add(newFood);
+                Food newFood = new Food
+                {
+                    ID = foodList.Count + 1,
+                    Name = txtName.Text,
+                    CategoryID = (int)cboCategoryFood.SelectedValue,
+                    Price = (int)numPrice.Value
+                };
+                foodBUS.Add(newFood);
 
-            foodList.Add(newFood);
-            UpdateDgv(foodList);
-            MessageBox.Show("Thêm thành công!");
+                foodList.Add(newFood);
+                UpdateDgv(foodList);
+                MessageBox.Show("Thêm thành công!");
+            }
+            else MessageBox.Show("Vui lòng nhập tên đồ ăn!");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (selectedFoodID > 0)
             {
-                Food food = new Food
+                if (txtName.Text.Length > 0)
                 {
-                    ID = selectedFoodID,
-                    Name = txtName.Text,
-                    CategoryID = (int)cboCategoryFood.SelectedValue,
-                    Price = (int)numPrice.Value
-                };
-                foodBUS.Update(food);
-                UpdateDgv(foodList);
-                MessageBox.Show("Sửa thành công!");
+                    Food food = new Food
+                    {
+                        ID = selectedFoodID,
+                        Name = txtName.Text,
+                        CategoryID = (int)cboCategoryFood.SelectedValue,
+                        Price = (int)numPrice.Value
+                    };
+                    foodBUS.Update(food);
+                    UpdateDgv(foodList);
+                    MessageBox.Show("Sửa thành công!");
+                }
+                else MessageBox.Show("Vui lòng nhập tên đồ ăn!");
             }
             else MessageBox.Show("Vui lòng chọn đồ ăn!", "Thao tác không hợp lệ");
         }

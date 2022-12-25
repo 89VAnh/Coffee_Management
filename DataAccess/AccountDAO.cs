@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Anh_Coffee.DataAccess
 {
@@ -23,21 +24,26 @@ namespace Anh_Coffee.DataAccess
         {
             return db.Accounts.SingleOrDefault(x => x.StaffID == staffID);
         }
-        public void Add(Account user)
+
+        public List<Account> getAccounts()
         {
-            db.Accounts.Add(user);
+            return db.Accounts.ToList();
+        }
+        public void Add(Account account)
+        {
+            db.Accounts.Add(account);
             db.SaveChanges();
         }
-        public void Update(Account user)
+        public void Update(Account account)
         {
-            Account u = db.Accounts.Find(user.UserName);
-            u.Password = user.Password;
+            Account u = db.Accounts.Find(account.UserName);
+            u.Password = account.Password;
             db.SaveChanges();
         }
 
-        public void Delete(Account user)
+        public void Delete(Account account)
         {
-            db.Accounts.Remove(user);
+            db.Accounts.Remove(account);
             db.SaveChanges();
         }
     }
