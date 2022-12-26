@@ -6,11 +6,11 @@ namespace Anh_Coffee.Business
     public class BillInfoBUS
     {
         BillInfoDAO billInfoDAO = new BillInfoDAO();
-        BillDAO billDAO = new BillDAO();
+        BillBUS billBUS = new BillBUS();
 
         public List<BillInfo> GetBillInfoesInTable(int tableID)
         {
-            Bill bill = billDAO.getBillByTableID(tableID);
+            Bill bill = billBUS.getBillByTableID(tableID);
             if (bill != null)
                 return billInfoDAO.GetBillInfoesInBill(bill.ID);
             else return new List<BillInfo>();

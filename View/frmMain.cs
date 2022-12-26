@@ -18,7 +18,6 @@ namespace Anh_Coffee.View
         BillBUS billBUS = new BillBUS();
         CategoryFoodBUS categoryFoodBUS = new CategoryFoodBUS();
         FoodBUS foodBUS = new FoodBUS();
-        AccountBUS accountBUS = new AccountBUS();
 
         // Variable
         int selectedFoodID = 0;
@@ -180,12 +179,12 @@ namespace Anh_Coffee.View
                 if (selectedFoodID > 0)
                 {
                     int id;
-                    Bill bill = billBUS.getBillIDByTableID(selectedTableID);
+                    Bill bill = billBUS.getBillByTableID(selectedTableID);
                     if (bill == null)
                     {
                         id = billBUS.getNewID();
                         billBUS.Add(new Bill { ID = id, TableID = selectedTableID, TotalPrice = 0 });
-                        bill = billBUS.getBillIDByTableID(selectedTableID);
+                        bill = billBUS.getBillByTableID(selectedTableID);
                     }
                     else
                         id = bill.ID;
@@ -277,6 +276,14 @@ namespace Anh_Coffee.View
             Discount();
         }
 
+        private void acceptPay(object sender, EventArgs e)
+        {
+            setTableStatus(selectedTableID, "Trống");
+            setCboChangeTableData();
+            billInfoListInSelectedTable = new List<BillInfo>();
+            UpdateDgvBill();
+        }
+
         private void btnPay_Click(object sender, EventArgs e)
         {
             if (selectedTableID > 0)
@@ -284,6 +291,7 @@ namespace Anh_Coffee.View
                 TableCoffee table = tableList.SingleOrDefault(x => x.ID == selectedTableID);
                 if (table.Status == "Có người")
                 {
+                    int billID = billBUS.getBillByTableID(selectedTableID).ID;
                     string discount = numDiscount.Value.ToString();
                     if (discount != "0")
                     {
@@ -294,7 +302,7 @@ namespace Anh_Coffee.View
                             default: break;
                         }
                     }
-                    frmBill f = new frmBill(table.Name, billInfoListInSelectedTable, discount, totalPrice, (int)numTotalPrice.Value);
+                    frmPayBill f = new frmPayBill(billID, table, billInfoListInSelectedTable, discount, totalPrice, (int)numTotalPrice.Value, acceptPay);
                     f.ShowDialog();
                 }
                 else MessageBox.Show("Bàn được chọn đang trống!");

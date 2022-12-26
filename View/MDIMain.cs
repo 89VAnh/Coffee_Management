@@ -1,4 +1,5 @@
 ﻿using Anh_Coffee.Business;
+using Anh_Coffee.DataAccess;
 using System;
 using System.Windows.Forms;
 
@@ -39,8 +40,13 @@ namespace Anh_Coffee.View
         }
         private void MDIMain_Load(object sender, EventArgs e)
         {
-            sttWelcome.Text = "Xin chào "
-                + staffBUS.getStaffByID(StaffBUS.currentStaffID).Name;
+            Staff staff = staffBUS.getStaffByID(StaffBUS.currentStaffID);
+            sttWelcome.Text = "Xin chào " + staff.Name;
+            if (staff.Position.Name == "Nhân viên")
+            {
+                //quảnLýToolStripMenuItem1.Enabled= false;
+                quảnLýToolStripMenuItem1.Visible = false;
+            }
         }
         private void thựcĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -114,6 +120,38 @@ namespace Anh_Coffee.View
                 }
             }
             frmStaff frm = new frmStaff();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.WindowState = FormWindowState.Maximized;
+        }
+
+        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.Name == "frmBill")
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            frmBill frm = new frmBill();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.WindowState = FormWindowState.Maximized;
+        }
+
+        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.Name == "frmStatistic")
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            frmStatistic frm = new frmStatistic();
             frm.MdiParent = this;
             frm.Show();
             frm.WindowState = FormWindowState.Maximized;

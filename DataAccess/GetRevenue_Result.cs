@@ -10,17 +10,10 @@
 namespace Anh_Coffee.DataAccess
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class BillInfo
+    public partial class GetRevenue_Result
     {
-        public int ID { get; set; }
-        public int BillID { get; set; }
-        public int FoodID { get; set; }
-        public int Amount { get; set; }
-        public string Note { get; set; }
-    
-        public virtual Bill Bill { get; set; }
-        public virtual Food Food { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<int> Revenue { get; set; }
     }
 }

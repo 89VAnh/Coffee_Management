@@ -1,40 +1,50 @@
-﻿using Anh_Coffee.DataAccess;
+﻿using Anh_Coffee.Business;
+using Anh_Coffee.DataAccess;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Globalization;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Anh_Coffee.View
 {
     public partial class frmBill : Form
     {
-
-        public frmBill(string table, List<BillInfo> billInfos, string discount, int totalPrice, int totalPriceAfterDiscount)
+        BillBUS billBUS = new BillBUS();
+        List<Bill> billList;
+        public frmBill()
         {
             InitializeComponent();
-            var nfi = new NumberFormatInfo()
+        }
+        private void UpdateDgv(List<Bill> bills)
+        {
+            dgvBill.DataSource = bills.Select(x => new { x.ID, x.TableCoffee.Name, x.CheckOut, x.Discount, x.TotalPrice }).ToList();
+        }
+
+        private void frmBill_Load(object sender, EventArgs e)
+        {
+            billList = billBUS.getBills();
+            UpdateDgv(billList);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            UpdateDgv(billList);
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (dtpFrom.Value <= dtpTo.Value)
             {
-                NumberDecimalDigits = 0,
-                NumberGroupSeparator = "."
-            };
-            lblTable.Text = table;
-            lblTime.Text = DateTime.Now.ToString();
-            lblTotalPrice.Text = totalPrice.ToString("N", nfi) + " đ";
-            lblDiscount.Text = discount;
-            lblPriceAfterDiscount.Text = totalPriceAfterDiscount.ToString("N", nfi) + " đ";
-            dgvBill.DataSource = billInfos.Select(b => new { b.ID, b.Food.Name, b.Amount, b.Food.Price, Total = b.Amount * b.Food.Price, b.Note }).ToList();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnAccept_Click(object sender, EventArgs e)
-        {
-
+                UpdateDgv(billList.Where(x => x.CheckOut >= dtpFrom.Value && x.CheckOut <= dtpTo.Value).ToList());
+            }
+            else MessageBox.Show("Khoảng thời gian được chọn không hợp lệ!");
         }
     }
 }

@@ -42,31 +42,34 @@
             this.btnTable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTable.FillColor = System.Drawing.Color.White;
             this.btnTable.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTable.ForeColor = System.Drawing.Color.Black;
             this.btnTable.HoverState.BorderColor = System.Drawing.Color.Black;
             this.btnTable.Image = global::Anh_Coffee.Properties.Resources.tableEmpty;
+            this.btnTable.ImageOffset = new System.Drawing.Point(0, 21);
             this.btnTable.ImageSize = new System.Drawing.Size(80, 80);
             this.btnTable.Location = new System.Drawing.Point(0, 0);
-            this.btnTable.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTable.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnTable.Name = "btnTable";
-            this.btnTable.Padding = new System.Windows.Forms.Padding(4);
-            this.btnTable.Size = new System.Drawing.Size(130, 130);
+            this.btnTable.Padding = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnTable.Size = new System.Drawing.Size(142, 94);
             this.btnTable.TabIndex = 0;
             this.btnTable.Text = "Bàn 1";
+            this.btnTable.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnTable.UseTransparentBackground = true;
             // 
             // Table
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.btnTable);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Table";
-            this.Padding = new System.Windows.Forms.Padding(8);
-            this.Size = new System.Drawing.Size(130, 130);
+            this.Size = new System.Drawing.Size(142, 94);
             this.ResumeLayout(false);
 
         }

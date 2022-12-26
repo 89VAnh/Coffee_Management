@@ -74,8 +74,8 @@ namespace Anh_Coffee.View
                         {
                             accountBUS.Add(accountFromForm);
                             MessageBox.Show("Đăng ký thành công!");
-                            this.Hide();
                             frmLogin f = new frmLogin();
+                            this.Hide();
                             f.ShowDialog();
                             this.Close();
                         }
@@ -85,6 +85,14 @@ namespace Anh_Coffee.View
                 }
                 else MessageBox.Show("Mã nhân viên đã tồn tại!");
             }
+        }
+
+        private void btnLogin_Click(object sender, System.EventArgs e)
+        {
+            frmLogin f = new frmLogin();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

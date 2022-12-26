@@ -70,9 +70,9 @@
             this.numTotalPrice = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.numDiscount = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.btnChangeTable = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDel = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
@@ -86,12 +86,12 @@
             this.flpTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpTable.AutoSize = true;
+            this.flpTable.AutoScroll = true;
             this.flpTable.Location = new System.Drawing.Point(0, 0);
             this.flpTable.Margin = new System.Windows.Forms.Padding(10);
             this.flpTable.Name = "flpTable";
             this.flpTable.Padding = new System.Windows.Forms.Padding(20);
-            this.flpTable.Size = new System.Drawing.Size(774, 381);
+            this.flpTable.Size = new System.Drawing.Size(713, 442);
             this.flpTable.TabIndex = 0;
             // 
             // btnPay
@@ -106,11 +106,11 @@
             this.btnPay.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(222)))));
-            this.btnPay.Location = new System.Drawing.Point(1017, 711);
+            this.btnPay.Location = new System.Drawing.Point(924, 654);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(358, 78);
+            this.btnPay.Size = new System.Drawing.Size(299, 52);
             this.btnPay.TabIndex = 9;
-            this.btnPay.Text = "Thanh toán";
+            this.btnPay.Text = "THANH TOÁN";
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // label1
@@ -119,7 +119,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(1013, 512);
+            this.label1.Location = new System.Drawing.Point(920, 516);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 6;
@@ -140,7 +140,7 @@
             this.cboChangeTable.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboChangeTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboChangeTable.ItemHeight = 30;
-            this.cboChangeTable.Location = new System.Drawing.Point(518, 438);
+            this.cboChangeTable.Location = new System.Drawing.Point(487, 455);
             this.cboChangeTable.Name = "cboChangeTable";
             this.cboChangeTable.Size = new System.Drawing.Size(160, 36);
             this.cboChangeTable.TabIndex = 8;
@@ -162,9 +162,9 @@
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.ForeColor = System.Drawing.Color.Maroon;
-            this.guna2Panel1.Location = new System.Drawing.Point(773, 0);
+            this.guna2Panel1.Location = new System.Drawing.Point(713, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(616, 381);
+            this.guna2Panel1.Size = new System.Drawing.Size(524, 442);
             this.guna2Panel1.TabIndex = 1;
             // 
             // numAmount
@@ -176,7 +176,7 @@
             this.numAmount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.numAmount.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.numAmount.ForeColor = System.Drawing.Color.Maroon;
-            this.numAmount.Location = new System.Drawing.Point(228, 275);
+            this.numAmount.Location = new System.Drawing.Point(228, 230);
             this.numAmount.Name = "numAmount";
             this.numAmount.Size = new System.Drawing.Size(100, 28);
             this.numAmount.TabIndex = 27;
@@ -201,7 +201,7 @@
             this.txtNote.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNote.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNote.Location = new System.Drawing.Point(228, 129);
+            this.txtNote.Location = new System.Drawing.Point(228, 97);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.PasswordChar = '\0';
@@ -248,7 +248,7 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFood.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvFood.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvFood.Location = new System.Drawing.Point(0, 324);
+            this.dgvFood.Location = new System.Drawing.Point(0, 282);
             this.dgvFood.Name = "dgvFood";
             this.dgvFood.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -262,7 +262,7 @@
             this.dgvFood.RowHeadersVisible = false;
             this.dgvFood.RowHeadersWidth = 51;
             this.dgvFood.RowTemplate.Height = 24;
-            this.dgvFood.Size = new System.Drawing.Size(616, 57);
+            this.dgvFood.Size = new System.Drawing.Size(524, 160);
             this.dgvFood.TabIndex = 25;
             this.dgvFood.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvFood.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -353,7 +353,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Maroon;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(103, 69);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(103, 56);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(119, 35);
             this.guna2HtmlLabel2.TabIndex = 1;
@@ -382,7 +382,7 @@
             this.cboFood.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboFood.ItemHeight = 30;
-            this.cboFood.Location = new System.Drawing.Point(228, 68);
+            this.cboFood.Location = new System.Drawing.Point(228, 55);
             this.cboFood.Name = "cboFood";
             this.cboFood.Size = new System.Drawing.Size(247, 36);
             this.cboFood.TabIndex = 1;
@@ -401,7 +401,7 @@
             this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(235)))), ((int)(((byte)(222)))));
-            this.btnSearch.Location = new System.Drawing.Point(93, 217);
+            this.btnSearch.Location = new System.Drawing.Point(93, 173);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(103, 36);
             this.btnSearch.TabIndex = 3;
@@ -426,7 +426,7 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(228, 217);
+            this.txtSearch.Location = new System.Drawing.Point(228, 173);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
@@ -440,7 +440,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(118, 129);
+            this.label2.Location = new System.Drawing.Point(118, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 23);
             this.label2.TabIndex = 2;
@@ -451,7 +451,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(109, 280);
+            this.label3.Location = new System.Drawing.Point(109, 235);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 23);
             this.label3.TabIndex = 4;
@@ -472,7 +472,7 @@
             this.cboTable.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTable.ItemHeight = 30;
-            this.cboTable.Location = new System.Drawing.Point(153, 438);
+            this.cboTable.Location = new System.Drawing.Point(152, 455);
             this.cboTable.Name = "cboTable";
             this.cboTable.Size = new System.Drawing.Size(160, 36);
             this.cboTable.TabIndex = 5;
@@ -484,7 +484,7 @@
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Maroon;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(5, 442);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(4, 459);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(142, 32);
             this.guna2HtmlLabel4.TabIndex = 5;
@@ -529,7 +529,7 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBill.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvBill.Location = new System.Drawing.Point(5, 512);
+            this.dgvBill.Location = new System.Drawing.Point(5, 516);
             this.dgvBill.Name = "dgvBill";
             this.dgvBill.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -543,7 +543,7 @@
             this.dgvBill.RowHeadersVisible = false;
             this.dgvBill.RowHeadersWidth = 51;
             this.dgvBill.RowTemplate.Height = 24;
-            this.dgvBill.Size = new System.Drawing.Size(990, 290);
+            this.dgvBill.Size = new System.Drawing.Size(888, 203);
             this.dgvBill.TabIndex = 10;
             this.dgvBill.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBill.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -629,9 +629,9 @@
             this.cboDiscountType.Items.AddRange(new object[] {
             "k ₫",
             "%"});
-            this.cboDiscountType.Location = new System.Drawing.Point(1267, 542);
+            this.cboDiscountType.Location = new System.Drawing.Point(1145, 549);
             this.cboDiscountType.Name = "cboDiscountType";
-            this.cboDiscountType.Size = new System.Drawing.Size(88, 30);
+            this.cboDiscountType.Size = new System.Drawing.Size(78, 30);
             this.cboDiscountType.StartIndex = 0;
             this.cboDiscountType.TabIndex = 12;
             this.cboDiscountType.SelectedIndexChanged += new System.EventHandler(this.cboDiscountType_SelectedIndexChanged);
@@ -643,7 +643,7 @@
             this.numTotalPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numTotalPrice.Enabled = false;
             this.numTotalPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numTotalPrice.Location = new System.Drawing.Point(1017, 618);
+            this.numTotalPrice.Location = new System.Drawing.Point(924, 605);
             this.numTotalPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numTotalPrice.Maximum = new decimal(new int[] {
             999999999,
@@ -651,7 +651,7 @@
             0,
             0});
             this.numTotalPrice.Name = "numTotalPrice";
-            this.numTotalPrice.Size = new System.Drawing.Size(358, 51);
+            this.numTotalPrice.Size = new System.Drawing.Size(299, 42);
             this.numTotalPrice.TabIndex = 13;
             this.numTotalPrice.ThousandsSeparator = true;
             this.numTotalPrice.UpDownButtonFillColor = System.Drawing.Color.Transparent;
@@ -666,14 +666,14 @@
             this.numDiscount.BorderRadius = 17;
             this.numDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numDiscount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numDiscount.Location = new System.Drawing.Point(1017, 542);
+            this.numDiscount.Location = new System.Drawing.Point(924, 549);
             this.numDiscount.Maximum = new decimal(new int[] {
             9999999,
             0,
             0,
             0});
             this.numDiscount.Name = "numDiscount";
-            this.numDiscount.Size = new System.Drawing.Size(231, 36);
+            this.numDiscount.Size = new System.Drawing.Size(203, 36);
             this.numDiscount.TabIndex = 14;
             this.numDiscount.ThousandsSeparator = true;
             this.numDiscount.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(88)))), ((int)(((byte)(84)))));
@@ -696,7 +696,7 @@
             this.btnChangeTable.ForeColor = System.Drawing.Color.Black;
             this.btnChangeTable.Image = global::Anh_Coffee.Properties.Resources.swap;
             this.btnChangeTable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnChangeTable.Location = new System.Drawing.Point(331, 438);
+            this.btnChangeTable.Location = new System.Drawing.Point(318, 455);
             this.btnChangeTable.Name = "btnChangeTable";
             this.btnChangeTable.Size = new System.Drawing.Size(163, 36);
             this.btnChangeTable.TabIndex = 9;
@@ -704,29 +704,6 @@
             this.btnChangeTable.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnChangeTable.UseTransparentBackground = true;
             this.btnChangeTable.Click += new System.EventHandler(this.btnChangeTable_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.AutoRoundedCorners = true;
-            this.btnDel.BorderRadius = 17;
-            this.btnDel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDel.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.btnDel.ForeColor = System.Drawing.Color.White;
-            this.btnDel.Image = global::Anh_Coffee.Properties.Resources.delete;
-            this.btnDel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDel.Location = new System.Drawing.Point(1017, 438);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(144, 36);
-            this.btnDel.TabIndex = 3;
-            this.btnDel.Text = "Xoá món";
-            this.btnDel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnUpdate
             // 
@@ -743,9 +720,9 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Image = global::Anh_Coffee.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnUpdate.Location = new System.Drawing.Point(773, 438);
+            this.btnUpdate.Location = new System.Drawing.Point(691, 455);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(144, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(115, 36);
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Sửa món";
             this.btnUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -766,20 +743,43 @@
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = global::Anh_Coffee.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdd.Location = new System.Drawing.Point(1233, 438);
+            this.btnAdd.Location = new System.Drawing.Point(1106, 455);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(156, 36);
+            this.btnAdd.Size = new System.Drawing.Size(131, 36);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Thêm món";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDel.AutoRoundedCorners = true;
+            this.btnDel.BorderRadius = 17;
+            this.btnDel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDel.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.btnDel.ForeColor = System.Drawing.Color.White;
+            this.btnDel.Image = global::Anh_Coffee.Properties.Resources.delete;
+            this.btnDel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDel.Location = new System.Drawing.Point(903, 455);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(116, 36);
+            this.btnDel.TabIndex = 3;
+            this.btnDel.Text = "Xoá món";
+            this.btnDel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1394, 801);
+            this.ClientSize = new System.Drawing.Size(1242, 718);
             this.Controls.Add(this.numDiscount);
             this.Controls.Add(this.numTotalPrice);
             this.Controls.Add(this.cboDiscountType);
@@ -795,7 +795,7 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.flpTable);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMain";
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -815,7 +815,6 @@
 
         private System.Windows.Forms.FlowLayoutPanel flpTable;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI2.WinForms.Guna2Button btnDel;
         private Guna.UI2.WinForms.Guna2Button btnPay;
         private Guna.UI2.WinForms.Guna2Button btnChangeTable;
         private System.Windows.Forms.Label label1;
@@ -850,5 +849,6 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown numAmount;
         private Guna.UI2.WinForms.Guna2NumericUpDown numTotalPrice;
         private Guna.UI2.WinForms.Guna2NumericUpDown numDiscount;
+        private Guna.UI2.WinForms.Guna2Button btnDel;
     }
 }
