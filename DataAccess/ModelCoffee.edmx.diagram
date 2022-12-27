@@ -5,20 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f1db881ddba74db489b9881678ddb553" Name="Diagram1">
-        <EntityTypeShape EntityType="CoffeeManagementModel.Account" Width="1.5" PointX="5.25" PointY="2.625" />
-        <EntityTypeShape EntityType="CoffeeManagementModel.Bill" Width="1.5" PointX="3.125" PointY="7.375" />
-        <EntityTypeShape EntityType="CoffeeManagementModel.BillInfo" Width="1.5" PointX="5.25" PointY="5" />
-        <EntityTypeShape EntityType="CoffeeManagementModel.CategoryFood" Width="1.5" PointX="0.75" PointY="5.375" />
-        <EntityTypeShape EntityType="CoffeeManagementModel.Food" Width="1.5" PointX="3" PointY="5" />
-        <EntityTypeShape EntityType="CoffeeManagementModel.Position" Width="1.5" PointX="0.625" PointY="2.25" />
-        <EntityTypeShape EntityType="CoffeeManagementModel.Staff" Width="1.5" PointX="3" PointY="1.75" />
-        <EntityTypeShape EntityType="CoffeeManagementModel.TableCoffee" Width="1.5" PointX="1" PointY="7.625" />
-        <AssociationConnector Association="CoffeeManagementModel.FK__Account__StaffID__5AB9788F" />
-        <AssociationConnector Association="CoffeeManagementModel.FK__Bill__TableID__625A9A57" />
-        <AssociationConnector Association="CoffeeManagementModel.FK__BillInfo__BillID__65370702" />
-        <AssociationConnector Association="CoffeeManagementModel.FK__BillInfo__FoodID__662B2B3B" />
-        <AssociationConnector Association="CoffeeManagementModel.FK__Food__CategoryID__5F7E2DAC" />
-        <AssociationConnector Association="CoffeeManagementModel.FK__Staff__PositionI__55F4C372" />
+        <EntityTypeShape EntityType="CoffeeManagementModel.Account" Width="1.5" PointX="5.875" PointY="0.875" />
+        <EntityTypeShape EntityType="CoffeeManagementModel.Bill" Width="1.5" PointX="4.5" PointY="6.625" />
+        <EntityTypeShape EntityType="CoffeeManagementModel.BillInfo" Width="1.5" PointX="6" PointY="3.625" />
+        <EntityTypeShape EntityType="CoffeeManagementModel.CategoryFood" Width="1.5" PointX="1.5" PointY="4" />
+        <EntityTypeShape EntityType="CoffeeManagementModel.Food" Width="1.5" PointX="3.75" PointY="3.625" />
+        <EntityTypeShape EntityType="CoffeeManagementModel.Position" Width="1.5" PointX="1.375" PointY="0.875" />
+        <EntityTypeShape EntityType="CoffeeManagementModel.Staff" Width="1.5" PointX="3.625" PointY="0.5" />
+        <EntityTypeShape EntityType="CoffeeManagementModel.TableCoffee" Width="1.5" PointX="1.875" PointY="6.625" />
+        <AssociationConnector Association="CoffeeManagementModel.FK__Account__StaffID__76619304" />
+        <AssociationConnector Association="CoffeeManagementModel.FK__Bill__TableID__01D345B0" />
+        <AssociationConnector Association="CoffeeManagementModel.FK__BillInfo__BillID__04AFB25B" />
+        <AssociationConnector Association="CoffeeManagementModel.FK__BillInfo__FoodID__05A3D694" />
+        <AssociationConnector Association="CoffeeManagementModel.FK__Food__CategoryID__7EF6D905" />
+        <AssociationConnector Association="CoffeeManagementModel.FK__Staff__PositionI__72910220" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

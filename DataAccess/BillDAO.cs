@@ -11,12 +11,15 @@ namespace Anh_Coffee.DataAccess
         {
             return db.Bills.ToList();
         }
-
+        public Bill getBillByTableID(int tableID)
+        {
+            return db.Bills
+                .SingleOrDefault(x => x.TableID == tableID && x.CheckOut == null);
+        }
         public void swapTable(int billID, int tableID)
         {
             Bill b = db.Bills.Find(billID);
             b.TableID = tableID;
-            db.GetRevenue();
             db.SaveChanges();
         }
         public List<GetRevenue_Result> GetRevenue()

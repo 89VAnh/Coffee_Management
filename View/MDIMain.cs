@@ -25,14 +25,6 @@ namespace Anh_Coffee.View
         }
         private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f.Name == "frmMain")
-                {
-                    f.Activate();
-                    return;
-                }
-            }
             frmMain frm = new frmMain();
             frm.MdiParent = this;
             frm.Show();
@@ -44,20 +36,11 @@ namespace Anh_Coffee.View
             sttWelcome.Text = "Xin chào " + staff.Name;
             if (staff.Position.Name == "Nhân viên")
             {
-                //quảnLýToolStripMenuItem1.Enabled= false;
                 quảnLýToolStripMenuItem1.Visible = false;
             }
         }
         private void thựcĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f.Name == "frmFood")
-                {
-                    f.Activate();
-                    return;
-                }
-            }
             frmFood frm = new frmFood();
             frm.MdiParent = this;
             frm.Show();
@@ -65,14 +48,6 @@ namespace Anh_Coffee.View
         }
         private void danhMụcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f.Name == "frmCategoryFood")
-                {
-                    f.Activate();
-                    return;
-                }
-            }
             frmCategoryFood frm = new frmCategoryFood();
             frm.MdiParent = this;
             frm.Show();
@@ -80,14 +55,6 @@ namespace Anh_Coffee.View
         }
         private void bànToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f.Name == "frmTable")
-                {
-                    f.Activate();
-                    return;
-                }
-            }
             frmTable frm = new frmTable();
             frm.MdiParent = this;
             frm.Show();
@@ -95,14 +62,6 @@ namespace Anh_Coffee.View
         }
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f.Name == "frmInfo")
-                {
-                    f.Activate();
-                    return;
-                }
-            }
             frmInfo frm = new frmInfo();
             frm.MdiParent = this;
             frm.Show();
@@ -111,14 +70,6 @@ namespace Anh_Coffee.View
 
         private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f.Name == "frmStaff")
-                {
-                    f.Activate();
-                    return;
-                }
-            }
             frmStaff frm = new frmStaff();
             frm.MdiParent = this;
             frm.Show();
@@ -127,14 +78,6 @@ namespace Anh_Coffee.View
 
         private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f.Name == "frmBill")
-                {
-                    f.Activate();
-                    return;
-                }
-            }
             frmBill frm = new frmBill();
             frm.MdiParent = this;
             frm.Show();
@@ -143,14 +86,6 @@ namespace Anh_Coffee.View
 
         private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form f in this.MdiChildren)
-            {
-                if (f.Name == "frmStatistic")
-                {
-                    f.Activate();
-                    return;
-                }
-            }
             frmStatistic frm = new frmStatistic();
             frm.MdiParent = this;
             frm.Show();

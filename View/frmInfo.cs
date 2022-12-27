@@ -39,6 +39,7 @@ namespace Anh_Coffee.View
                     Phone = txtPhone.Text,
                     Email = txtEmail.Text,
                     Address = txtAddress.Text,
+                    PositionID = this.staff.PositionID,
                 };
                 return staff;
             }

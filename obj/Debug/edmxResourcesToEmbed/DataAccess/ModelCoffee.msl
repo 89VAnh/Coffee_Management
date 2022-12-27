@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="CoffeeManagementModelStoreContainer" CdmEntityContainer="CoffeeManagementEntities">
+    <FunctionImportMapping FunctionImportName="GetRevenue" FunctionName="CoffeeManagementModel.Store.GetRevenue">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CoffeeManagementModel.GetRevenue_Result">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="Accounts">
       <EntityTypeMapping TypeName="CoffeeManagementModel.Account">
         <MappingFragment StoreEntitySet="Account">
@@ -79,13 +87,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="GetRevenue" FunctionName="CoffeeManagementModel.Store.GetRevenue">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="CoffeeManagementModel.GetRevenue_Result">
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

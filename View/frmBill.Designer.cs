@@ -67,7 +67,7 @@
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(116, 43);
-            this.btnRefresh.TabIndex = 22;
+            this.btnRefresh.TabIndex = 4;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnRefresh.UseTransparentBackground = true;
@@ -93,7 +93,7 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(119, 43);
-            this.btnSearch.TabIndex = 23;
+            this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnSearch.UseTransparentBackground = true;
@@ -175,7 +175,7 @@
             this.dgvBill.RowHeadersWidth = 51;
             this.dgvBill.RowTemplate.Height = 28;
             this.dgvBill.Size = new System.Drawing.Size(970, 400);
-            this.dgvBill.TabIndex = 27;
+            this.dgvBill.TabIndex = 0;
             this.dgvBill.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBill.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvBill.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -251,7 +251,7 @@
             this.dtpFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(334, 36);
-            this.dtpFrom.TabIndex = 28;
+            this.dtpFrom.TabIndex = 1;
             this.dtpFrom.UseTransparentBackground = true;
             this.dtpFrom.Value = new System.DateTime(2022, 12, 26, 11, 5, 35, 484);
             // 
@@ -272,7 +272,7 @@
             this.dtpTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(334, 36);
-            this.dtpTo.TabIndex = 29;
+            this.dtpTo.TabIndex = 2;
             this.dtpTo.UseTransparentBackground = true;
             this.dtpTo.Value = new System.DateTime(2022, 12, 26, 11, 5, 13, 484);
             // 

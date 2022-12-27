@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CoffeeManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="CoffeeManagementEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GetRevenue" ReturnType="Collection(CoffeeManagementModel.GetRevenue_Result)" />
     <EntitySet Name="Accounts" EntityType="CoffeeManagementModel.Account" />
     <EntitySet Name="Bills" EntityType="CoffeeManagementModel.Bill" />
     <EntitySet Name="BillInfoes" EntityType="CoffeeManagementModel.BillInfo" />
@@ -9,40 +10,43 @@
     <EntitySet Name="Positions" EntityType="CoffeeManagementModel.Position" />
     <EntitySet Name="Staffs" EntityType="CoffeeManagementModel.Staff" />
     <EntitySet Name="TableCoffees" EntityType="CoffeeManagementModel.TableCoffee" />
-    <AssociationSet Name="FK__Account__StaffID__5AB9788F" Association="CoffeeManagementModel.FK__Account__StaffID__5AB9788F">
+    <AssociationSet Name="FK__Account__StaffID__76619304" Association="CoffeeManagementModel.FK__Account__StaffID__76619304">
       <End Role="Staff" EntitySet="Staffs" />
       <End Role="Account" EntitySet="Accounts" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bill__TableID__625A9A57" Association="CoffeeManagementModel.FK__Bill__TableID__625A9A57">
+    <AssociationSet Name="FK__Bill__TableID__01D345B0" Association="CoffeeManagementModel.FK__Bill__TableID__01D345B0">
       <End Role="TableCoffee" EntitySet="TableCoffees" />
       <End Role="Bill" EntitySet="Bills" />
     </AssociationSet>
-    <AssociationSet Name="FK__BillInfo__BillID__65370702" Association="CoffeeManagementModel.FK__BillInfo__BillID__65370702">
+    <AssociationSet Name="FK__BillInfo__BillID__04AFB25B" Association="CoffeeManagementModel.FK__BillInfo__BillID__04AFB25B">
       <End Role="Bill" EntitySet="Bills" />
       <End Role="BillInfo" EntitySet="BillInfoes" />
     </AssociationSet>
-    <AssociationSet Name="FK__BillInfo__FoodID__662B2B3B" Association="CoffeeManagementModel.FK__BillInfo__FoodID__662B2B3B">
+    <AssociationSet Name="FK__BillInfo__FoodID__05A3D694" Association="CoffeeManagementModel.FK__BillInfo__FoodID__05A3D694">
       <End Role="Food" EntitySet="Foods" />
       <End Role="BillInfo" EntitySet="BillInfoes" />
     </AssociationSet>
-    <AssociationSet Name="FK__Food__CategoryID__5F7E2DAC" Association="CoffeeManagementModel.FK__Food__CategoryID__5F7E2DAC">
+    <AssociationSet Name="FK__Food__CategoryID__7EF6D905" Association="CoffeeManagementModel.FK__Food__CategoryID__7EF6D905">
       <End Role="CategoryFood" EntitySet="CategoryFoods" />
       <End Role="Food" EntitySet="Foods" />
     </AssociationSet>
-    <AssociationSet Name="FK__Staff__PositionI__55F4C372" Association="CoffeeManagementModel.FK__Staff__PositionI__55F4C372">
+    <AssociationSet Name="FK__Staff__PositionI__72910220" Association="CoffeeManagementModel.FK__Staff__PositionI__72910220">
       <End Role="Position" EntitySet="Positions" />
       <End Role="Staff" EntitySet="Staffs" />
     </AssociationSet>
-    <FunctionImport Name="GetRevenue" ReturnType="Collection(CoffeeManagementModel.GetRevenue_Result)" />
   </EntityContainer>
+  <ComplexType Name="GetRevenue_Result">
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="Int32" Name="Revenue" Nullable="true" />
+  </ComplexType>
   <EntityType Name="Account">
     <Key>
       <PropertyRef Name="UserName" />
     </Key>
     <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Password" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="StaffID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Staff" Relationship="CoffeeManagementModel.FK__Account__StaffID__5AB9788F" FromRole="Account" ToRole="Staff" />
+    <NavigationProperty Name="Staff" Relationship="CoffeeManagementModel.FK__Account__StaffID__76619304" FromRole="Account" ToRole="Staff" />
   </EntityType>
   <EntityType Name="Bill">
     <Key>
@@ -53,8 +57,8 @@
     <Property Name="Discount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="TotalPrice" Type="Int32" Nullable="false" />
     <Property Name="CheckOut" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="TableCoffee" Relationship="CoffeeManagementModel.FK__Bill__TableID__625A9A57" FromRole="Bill" ToRole="TableCoffee" />
-    <NavigationProperty Name="BillInfoes" Relationship="CoffeeManagementModel.FK__BillInfo__BillID__65370702" FromRole="Bill" ToRole="BillInfo" />
+    <NavigationProperty Name="TableCoffee" Relationship="CoffeeManagementModel.FK__Bill__TableID__01D345B0" FromRole="Bill" ToRole="TableCoffee" />
+    <NavigationProperty Name="BillInfoes" Relationship="CoffeeManagementModel.FK__BillInfo__BillID__04AFB25B" FromRole="Bill" ToRole="BillInfo" />
   </EntityType>
   <EntityType Name="BillInfo">
     <Key>
@@ -65,8 +69,8 @@
     <Property Name="FoodID" Type="Int32" Nullable="false" />
     <Property Name="Amount" Type="Int32" Nullable="false" />
     <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Bill" Relationship="CoffeeManagementModel.FK__BillInfo__BillID__65370702" FromRole="BillInfo" ToRole="Bill" />
-    <NavigationProperty Name="Food" Relationship="CoffeeManagementModel.FK__BillInfo__FoodID__662B2B3B" FromRole="BillInfo" ToRole="Food" />
+    <NavigationProperty Name="Bill" Relationship="CoffeeManagementModel.FK__BillInfo__BillID__04AFB25B" FromRole="BillInfo" ToRole="Bill" />
+    <NavigationProperty Name="Food" Relationship="CoffeeManagementModel.FK__BillInfo__FoodID__05A3D694" FromRole="BillInfo" ToRole="Food" />
   </EntityType>
   <EntityType Name="CategoryFood">
     <Key>
@@ -74,7 +78,7 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Foods" Relationship="CoffeeManagementModel.FK__Food__CategoryID__5F7E2DAC" FromRole="CategoryFood" ToRole="Food" />
+    <NavigationProperty Name="Foods" Relationship="CoffeeManagementModel.FK__Food__CategoryID__7EF6D905" FromRole="CategoryFood" ToRole="Food" />
   </EntityType>
   <EntityType Name="Food">
     <Key>
@@ -84,16 +88,16 @@
     <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CategoryID" Type="Int32" Nullable="false" />
     <Property Name="Price" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="BillInfoes" Relationship="CoffeeManagementModel.FK__BillInfo__FoodID__662B2B3B" FromRole="Food" ToRole="BillInfo" />
-    <NavigationProperty Name="CategoryFood" Relationship="CoffeeManagementModel.FK__Food__CategoryID__5F7E2DAC" FromRole="Food" ToRole="CategoryFood" />
+    <NavigationProperty Name="BillInfoes" Relationship="CoffeeManagementModel.FK__BillInfo__FoodID__05A3D694" FromRole="Food" ToRole="BillInfo" />
+    <NavigationProperty Name="CategoryFood" Relationship="CoffeeManagementModel.FK__Food__CategoryID__7EF6D905" FromRole="Food" ToRole="CategoryFood" />
   </EntityType>
   <EntityType Name="Position">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Staffs" Relationship="CoffeeManagementModel.FK__Staff__PositionI__55F4C372" FromRole="Position" ToRole="Staff" />
+    <NavigationProperty Name="Staffs" Relationship="CoffeeManagementModel.FK__Staff__PositionI__72910220" FromRole="Position" ToRole="Staff" />
   </EntityType>
   <EntityType Name="Staff">
     <Key>
@@ -104,9 +108,9 @@
     <Property Name="Phone" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="PositionID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Accounts" Relationship="CoffeeManagementModel.FK__Account__StaffID__5AB9788F" FromRole="Staff" ToRole="Account" />
-    <NavigationProperty Name="Position" Relationship="CoffeeManagementModel.FK__Staff__PositionI__55F4C372" FromRole="Staff" ToRole="Position" />
+    <Property Name="PositionID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Accounts" Relationship="CoffeeManagementModel.FK__Account__StaffID__76619304" FromRole="Staff" ToRole="Account" />
+    <NavigationProperty Name="Position" Relationship="CoffeeManagementModel.FK__Staff__PositionI__72910220" FromRole="Staff" ToRole="Position" />
   </EntityType>
   <EntityType Name="TableCoffee">
     <Key>
@@ -115,9 +119,9 @@
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Bills" Relationship="CoffeeManagementModel.FK__Bill__TableID__625A9A57" FromRole="TableCoffee" ToRole="Bill" />
+    <NavigationProperty Name="Bills" Relationship="CoffeeManagementModel.FK__Bill__TableID__01D345B0" FromRole="TableCoffee" ToRole="Bill" />
   </EntityType>
-  <Association Name="FK__Account__StaffID__5AB9788F">
+  <Association Name="FK__Account__StaffID__76619304">
     <End Type="CoffeeManagementModel.Staff" Role="Staff" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -131,7 +135,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bill__TableID__625A9A57">
+  <Association Name="FK__Bill__TableID__01D345B0">
     <End Type="CoffeeManagementModel.TableCoffee" Role="TableCoffee" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -145,7 +149,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BillInfo__BillID__65370702">
+  <Association Name="FK__BillInfo__BillID__04AFB25B">
     <End Type="CoffeeManagementModel.Bill" Role="Bill" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -159,7 +163,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BillInfo__FoodID__662B2B3B">
+  <Association Name="FK__BillInfo__FoodID__05A3D694">
     <End Type="CoffeeManagementModel.Food" Role="Food" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -173,7 +177,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Food__CategoryID__5F7E2DAC">
+  <Association Name="FK__Food__CategoryID__7EF6D905">
     <End Type="CoffeeManagementModel.CategoryFood" Role="CategoryFood" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -187,7 +191,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Staff__PositionI__55F4C372">
+  <Association Name="FK__Staff__PositionI__72910220">
     <End Type="CoffeeManagementModel.Position" Role="Position" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -201,8 +205,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="GetRevenue_Result">
-    <Property Type="DateTime" Name="Date" Nullable="true" />
-    <Property Type="Int32" Name="Revenue" Nullable="true" />
-  </ComplexType>
 </Schema>

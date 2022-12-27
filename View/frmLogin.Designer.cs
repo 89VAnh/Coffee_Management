@@ -90,11 +90,11 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Lucida Calligraphy", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Chocolate;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(524, 77);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(517, 74);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(222, 46);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(281, 56);
             this.guna2HtmlLabel1.TabIndex = 3;
-            this.guna2HtmlLabel1.Text = "CE COFFEE";
+            this.guna2HtmlLabel1.Text = "ANH COFFEE";
             // 
             // guna2HtmlLabel2
             // 
@@ -137,7 +137,7 @@
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = global::Anh_Coffee.Properties.Resources.cup_of_coffee;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(752, 58);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(804, 59);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(82, 86);
             this.guna2PictureBox2.TabIndex = 5;

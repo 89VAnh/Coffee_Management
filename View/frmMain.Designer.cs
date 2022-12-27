@@ -39,7 +39,6 @@
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPay = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboChangeTable = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.numAmount = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.txtNote = new Guna.UI2.WinForms.Guna2TextBox();
@@ -73,6 +72,7 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnDel = new Guna.UI2.WinForms.Guna2Button();
+            this.cboChangeTable = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
@@ -124,26 +124,6 @@
             this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "Giảm giá :";
-            // 
-            // cboChangeTable
-            // 
-            this.cboChangeTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cboChangeTable.AutoRoundedCorners = true;
-            this.cboChangeTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.cboChangeTable.BorderRadius = 17;
-            this.cboChangeTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboChangeTable.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboChangeTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboChangeTable.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.cboChangeTable.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboChangeTable.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboChangeTable.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboChangeTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboChangeTable.ItemHeight = 30;
-            this.cboChangeTable.Location = new System.Drawing.Point(487, 455);
-            this.cboChangeTable.Name = "cboChangeTable";
-            this.cboChangeTable.Size = new System.Drawing.Size(160, 36);
-            this.cboChangeTable.TabIndex = 8;
             // 
             // guna2Panel1
             // 
@@ -472,7 +452,7 @@
             this.cboTable.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTable.ItemHeight = 30;
-            this.cboTable.Location = new System.Drawing.Point(152, 455);
+            this.cboTable.Location = new System.Drawing.Point(152, 469);
             this.cboTable.Name = "cboTable";
             this.cboTable.Size = new System.Drawing.Size(160, 36);
             this.cboTable.TabIndex = 5;
@@ -484,7 +464,7 @@
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Maroon;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(4, 459);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(12, 473);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(142, 32);
             this.guna2HtmlLabel4.TabIndex = 5;
@@ -696,7 +676,7 @@
             this.btnChangeTable.ForeColor = System.Drawing.Color.Black;
             this.btnChangeTable.Image = global::Anh_Coffee.Properties.Resources.swap;
             this.btnChangeTable.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnChangeTable.Location = new System.Drawing.Point(318, 455);
+            this.btnChangeTable.Location = new System.Drawing.Point(318, 469);
             this.btnChangeTable.Name = "btnChangeTable";
             this.btnChangeTable.Size = new System.Drawing.Size(163, 36);
             this.btnChangeTable.TabIndex = 9;
@@ -720,7 +700,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Image = global::Anh_Coffee.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnUpdate.Location = new System.Drawing.Point(691, 455);
+            this.btnUpdate.Location = new System.Drawing.Point(691, 469);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(115, 36);
             this.btnUpdate.TabIndex = 4;
@@ -743,7 +723,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Image = global::Anh_Coffee.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdd.Location = new System.Drawing.Point(1106, 455);
+            this.btnAdd.Location = new System.Drawing.Point(1106, 469);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(131, 36);
             this.btnAdd.TabIndex = 2;
@@ -766,7 +746,7 @@
             this.btnDel.ForeColor = System.Drawing.Color.White;
             this.btnDel.Image = global::Anh_Coffee.Properties.Resources.delete;
             this.btnDel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDel.Location = new System.Drawing.Point(903, 455);
+            this.btnDel.Location = new System.Drawing.Point(903, 469);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(116, 36);
             this.btnDel.TabIndex = 3;
@@ -774,12 +754,33 @@
             this.btnDel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
+            // cboChangeTable
+            // 
+            this.cboChangeTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cboChangeTable.AutoRoundedCorners = true;
+            this.cboChangeTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.cboChangeTable.BorderRadius = 17;
+            this.cboChangeTable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboChangeTable.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboChangeTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChangeTable.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.cboChangeTable.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboChangeTable.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboChangeTable.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboChangeTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboChangeTable.ItemHeight = 30;
+            this.cboChangeTable.Location = new System.Drawing.Point(487, 469);
+            this.cboChangeTable.Name = "cboChangeTable";
+            this.cboChangeTable.Size = new System.Drawing.Size(160, 36);
+            this.cboChangeTable.TabIndex = 15;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1242, 718);
+            this.Controls.Add(this.cboChangeTable);
             this.Controls.Add(this.numDiscount);
             this.Controls.Add(this.numTotalPrice);
             this.Controls.Add(this.cboDiscountType);
@@ -787,7 +788,6 @@
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.cboTable);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.cboChangeTable);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnChangeTable);
             this.Controls.Add(this.btnPay);
@@ -797,7 +797,7 @@
             this.Controls.Add(this.flpTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMain";
-            this.Text = "frmMain";
+            this.Text = "Tác vụ";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -818,7 +818,6 @@
         private Guna.UI2.WinForms.Guna2Button btnPay;
         private Guna.UI2.WinForms.Guna2Button btnChangeTable;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ComboBox cboChangeTable;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
@@ -850,5 +849,6 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown numTotalPrice;
         private Guna.UI2.WinForms.Guna2NumericUpDown numDiscount;
         private Guna.UI2.WinForms.Guna2Button btnDel;
+        private Guna.UI2.WinForms.Guna2ComboBox cboChangeTable;
     }
 }

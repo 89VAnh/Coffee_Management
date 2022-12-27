@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
@@ -38,26 +38,28 @@
             // 
             // chartRevenue
             // 
-            this.chartRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.chartRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartRevenue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            chartArea2.Name = "ChartArea1";
-            this.chartRevenue.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartRevenue.Legends.Add(legend2);
+            this.chartRevenue.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.chartRevenue.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            chartArea1.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend1);
             this.chartRevenue.Location = new System.Drawing.Point(12, 138);
             this.chartRevenue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartRevenue.Name = "chartRevenue";
             this.chartRevenue.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Revenue";
-            series2.XValueMember = "Date";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
-            series2.YValueMembers = "Revenue";
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chartRevenue.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Revenue";
+            series1.XValueMember = "Date";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series1.YValueMembers = "Revenue";
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chartRevenue.Series.Add(series1);
             this.chartRevenue.Size = new System.Drawing.Size(1032, 452);
             this.chartRevenue.TabIndex = 0;
             this.chartRevenue.Text = "Thống kê doanh thu";
@@ -84,7 +86,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmStatistic";
-            this.Text = "frmStatistic";
+            this.Text = "Thống kê doanh thu";
             this.Load += new System.EventHandler(this.frmStatistic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             this.ResumeLayout(false);

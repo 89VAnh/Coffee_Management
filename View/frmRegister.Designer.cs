@@ -79,7 +79,7 @@
             this.txtRePw.PlaceholderText = "";
             this.txtRePw.SelectedText = "";
             this.txtRePw.Size = new System.Drawing.Size(224, 32);
-            this.txtRePw.TabIndex = 29;
+            this.txtRePw.TabIndex = 8;
             this.txtRePw.UseSystemPasswordChar = true;
             // 
             // guna2HtmlLabel9
@@ -113,7 +113,7 @@
             this.txtPw.PlaceholderText = "";
             this.txtPw.SelectedText = "";
             this.txtPw.Size = new System.Drawing.Size(223, 32);
-            this.txtPw.TabIndex = 27;
+            this.txtPw.TabIndex = 7;
             this.txtPw.UseSystemPasswordChar = true;
             // 
             // guna2HtmlLabel7
@@ -181,7 +181,7 @@
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(257, 32);
-            this.txtEmail.TabIndex = 24;
+            this.txtEmail.TabIndex = 3;
             // 
             // guna2HtmlLabel5
             // 
@@ -214,7 +214,7 @@
             this.txtPhone.PlaceholderText = "";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(194, 32);
-            this.txtPhone.TabIndex = 23;
+            this.txtPhone.TabIndex = 2;
             // 
             // guna2HtmlLabel4
             // 
@@ -247,7 +247,7 @@
             this.txtName.PlaceholderText = "";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(274, 32);
-            this.txtName.TabIndex = 22;
+            this.txtName.TabIndex = 1;
             // 
             // guna2HtmlLabel3
             // 
@@ -291,8 +291,7 @@
             this.txtID.PlaceholderText = "";
             this.txtID.SelectedText = "";
             this.txtID.Size = new System.Drawing.Size(160, 32);
-            this.txtID.TabIndex = 43;
-            this.txtID.TabStop = false;
+            this.txtID.TabIndex = 0;
             // 
             // txtUn
             // 
@@ -314,8 +313,7 @@
             this.txtUn.PlaceholderText = "";
             this.txtUn.SelectedText = "";
             this.txtUn.Size = new System.Drawing.Size(224, 32);
-            this.txtUn.TabIndex = 44;
-            this.txtUn.TabStop = false;
+            this.txtUn.TabIndex = 6;
             // 
             // txtAddress
             // 
@@ -337,8 +335,7 @@
             this.txtAddress.PlaceholderText = "";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(257, 32);
-            this.txtAddress.TabIndex = 45;
-            this.txtAddress.TabStop = false;
+            this.txtAddress.TabIndex = 4;
             // 
             // btnRegister
             // 
@@ -356,7 +353,7 @@
             this.btnRegister.Location = new System.Drawing.Point(900, 518);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(201, 41);
-            this.btnRegister.TabIndex = 47;
+            this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Đăng ký";
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -375,7 +372,7 @@
             this.cboPosition.Location = new System.Drawing.Point(946, 283);
             this.cboPosition.Name = "cboPosition";
             this.cboPosition.Size = new System.Drawing.Size(198, 36);
-            this.cboPosition.TabIndex = 48;
+            this.cboPosition.TabIndex = 5;
             // 
             // guna2Elipse1
             // 
@@ -415,7 +412,7 @@
             this.guna2ControlBox2.Location = new System.Drawing.Point(1078, -1);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(48, 38);
-            this.guna2ControlBox2.TabIndex = 51;
+            this.guna2ControlBox2.TabIndex = 11;
             // 
             // guna2ControlBox1
             // 
@@ -428,7 +425,7 @@
             this.guna2ControlBox1.Location = new System.Drawing.Point(1126, -1);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(46, 38);
-            this.guna2ControlBox1.TabIndex = 50;
+            this.guna2ControlBox1.TabIndex = 12;
             // 
             // btnLogin
             // 
@@ -446,7 +443,7 @@
             this.btnLogin.Location = new System.Drawing.Point(653, 518);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(201, 41);
-            this.btnLogin.TabIndex = 52;
+            this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 

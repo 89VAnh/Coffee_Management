@@ -14,19 +14,19 @@ namespace Anh_Coffee.DataAccess
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    
+
     public partial class CoffeeManagementEntities : DbContext
     {
         public CoffeeManagementEntities()
             : base("name=CoffeeManagementEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<BillInfo> BillInfoes { get; set; }
@@ -35,7 +35,7 @@ namespace Anh_Coffee.DataAccess
         public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<TableCoffee> TableCoffees { get; set; }
-    
+
         public virtual ObjectResult<GetRevenue_Result> GetRevenue()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetRevenue_Result>("GetRevenue");

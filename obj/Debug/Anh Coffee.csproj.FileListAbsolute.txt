@@ -23,3 +23,7 @@ D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.C
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.csproj.CopyComplete
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.exe
 D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh Coffee.pdb
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmBill.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmPayBill.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmRegister.resources
+D:\Windows form\Quản lý quán Coffee\Anh Coffee\obj\Debug\Anh_Coffee.View.frmStatistic.resources

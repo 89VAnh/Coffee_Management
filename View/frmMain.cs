@@ -138,7 +138,7 @@ namespace Anh_Coffee.View
                     MessageBox.Show($"Đã đổi bàn {selectedTableID} => {newTableID} thành công");
                     selectedTableID = newTableID;
                     cboTable.SelectedValue = selectedTableID;
-                    billInfoListInSelectedTable = billInfoListInSelectedTable = billInfoBUS.GetBillInfoesInTable(selectedTableID);
+                    billInfoListInSelectedTable = billInfoBUS.GetBillInfoesInTable(selectedTableID);
                     UpdateDgvBill();
                 }
                 else MessageBox.Show("Không chuyển được bàn đang trống!");

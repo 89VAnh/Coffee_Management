@@ -116,7 +116,7 @@
             // 
             this.thựcĐơnToolStripMenuItem.Image = global::Anh_Coffee.Properties.Resources.menu;
             this.thựcĐơnToolStripMenuItem.Name = "thựcĐơnToolStripMenuItem";
-            this.thựcĐơnToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.thựcĐơnToolStripMenuItem.Size = new System.Drawing.Size(176, 28);
             this.thựcĐơnToolStripMenuItem.Text = "Thự&c đơn";
             this.thựcĐơnToolStripMenuItem.Click += new System.EventHandler(this.thựcĐơnToolStripMenuItem_Click);
             // 
@@ -124,7 +124,7 @@
             // 
             this.danhMụcToolStripMenuItem.Image = global::Anh_Coffee.Properties.Resources.information;
             this.danhMụcToolStripMenuItem.Name = "danhMụcToolStripMenuItem";
-            this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.danhMụcToolStripMenuItem.Size = new System.Drawing.Size(176, 28);
             this.danhMụcToolStripMenuItem.Text = "&Danh mục";
             this.danhMụcToolStripMenuItem.Click += new System.EventHandler(this.danhMụcToolStripMenuItem_Click);
             // 
@@ -132,7 +132,7 @@
             // 
             this.bànToolStripMenuItem.Image = global::Anh_Coffee.Properties.Resources.chair;
             this.bànToolStripMenuItem.Name = "bànToolStripMenuItem";
-            this.bànToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.bànToolStripMenuItem.Size = new System.Drawing.Size(176, 28);
             this.bànToolStripMenuItem.Text = "&Bàn";
             this.bànToolStripMenuItem.Click += new System.EventHandler(this.bànToolStripMenuItem_Click);
             // 
@@ -140,20 +140,20 @@
             // 
             this.tàiKhoảnToolStripMenuItem.Image = global::Anh_Coffee.Properties.Resources.skills;
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(176, 28);
             this.tàiKhoảnToolStripMenuItem.Text = "&Tài khoản";
             this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.tàiKhoảnToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
             // 
             // doanhThuToolStripMenuItem
             // 
             this.doanhThuToolStripMenuItem.Image = global::Anh_Coffee.Properties.Resources.salary;
             this.doanhThuToolStripMenuItem.Name = "doanhThuToolStripMenuItem";
-            this.doanhThuToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.doanhThuToolStripMenuItem.Size = new System.Drawing.Size(176, 28);
             this.doanhThuToolStripMenuItem.Text = "Doan&h thu";
             this.doanhThuToolStripMenuItem.Click += new System.EventHandler(this.doanhThuToolStripMenuItem_Click);
             // 
@@ -161,7 +161,7 @@
             // 
             this.thốngKêToolStripMenuItem.Image = global::Anh_Coffee.Properties.Resources.analytics;
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(176, 28);
             this.thốngKêToolStripMenuItem.Text = "Thống &kê";
             this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
@@ -180,7 +180,7 @@
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
             this.statusStrip.Size = new System.Drawing.Size(1127, 26);
-            this.statusStrip.TabIndex = 2;
+            this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "StatusStrip";
             // 
             // MDIMain
@@ -194,7 +194,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MDIMain";
-            this.Text = "CE Coffee";
+            this.Text = "Anh Coffee";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MDIMain_Load);
             this.menuStrip.ResumeLayout(false);

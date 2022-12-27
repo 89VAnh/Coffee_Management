@@ -85,6 +85,13 @@ namespace Anh_Coffee.View
             }
             else return true;
         }
+
+        private void cboPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateDgv(accountList
+                .Where(x => x.Staff.PositionID == cboPosition.SelectedValue.ToString()).ToList());
+        }
+
         private void getAccountFromForm()
         {
             if (checkTextBox(txtID) && checkTextBox(txtUserName) && checkTextBox(txtPassword) && checkTextBox(txtName) && checkTextBox(txtPhone) && checkTextBox(txtEmail) && checkTextBox(txtAddress))
@@ -113,7 +120,6 @@ namespace Anh_Coffee.View
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin");
             }
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             getAccountFromForm();
@@ -159,23 +165,43 @@ namespace Anh_Coffee.View
                 {
                     if (account.UserName == accountFromForm.UserName)
                     {
-                        if (txtPassword.Text.Length >= 6)
+                        if (account.Password == accountFromForm.Password)
                         {
                             staffBUS.Update(staffFromForm);
-                            accountBUS.Update(accountFromForm);
-
-                            MessageBox.Show("Sửa thành công!");
                             UpdateStaff(staffFromForm);
+                            MessageBox.Show("Sửa thông tin thành công!");
                             btnRefresh_Click(sender, e);
                         }
-                        else MessageBox.Show("Mật khẩu chứa tối thiểu 6 ký tự");
+                        else MessageBox.Show("Mật khẩu bị thay đổi!\nVui lòng đổi mật khẩu ở mục khác!");
                     }
                     else MessageBox.Show("Không được đổi tên tài khoản!");
                 }
                 else MessageBox.Show("Mã nhân viên không tồn tại!");
             }
         }
-
+        private void btnChangePw_Click(object sender, EventArgs e)
+        {
+            getAccountFromForm();
+            if (staffFromForm != null && accountFromForm != null)
+            {
+                Account account = accountList.SingleOrDefault(x => x.StaffID == staffFromForm.ID);
+                if (account != null)
+                {
+                    if (account.UserName == accountFromForm.UserName)
+                    {
+                        if (accountFromForm.Password.Length >= 6)
+                        {
+                            accountBUS.Update(accountFromForm);
+                            MessageBox.Show("Sửa mật khẩu thành công!");
+                            btnRefresh_Click(sender, e);
+                        }
+                        else MessageBox.Show("Mật khẩu tối thiểu 6 ký tự!");
+                    }
+                    else MessageBox.Show("Không được đổi tên tài khoản!");
+                }
+                else MessageBox.Show("Mã nhân viên không tồn tại!");
+            }
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (checkTextBox(txtID))
@@ -188,13 +214,6 @@ namespace Anh_Coffee.View
             }
             else MessageBox.Show("Chưa có nhân viên nào được chọn!");
         }
-
-        private void cboPosition_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UpdateDgv(accountList
-                .Where(x => x.Staff.PositionID == cboPosition.SelectedValue.ToString()).ToList());
-        }
-
         private void txtID_TextChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
@@ -229,5 +248,6 @@ namespace Anh_Coffee.View
         {
             errorProvider.Clear();
         }
+
     }
 }

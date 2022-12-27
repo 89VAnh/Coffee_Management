@@ -12,7 +12,7 @@ namespace Anh_Coffee.View
     {
         TableBUS tableBUS = new TableBUS();
 
-        List<TableCoffee> tableList = new List<TableCoffee>();
+        List<TableCoffee> tableList;
         int selectedTableID = 0;
         public frmTable()
         {
@@ -25,7 +25,6 @@ namespace Anh_Coffee.View
         private void frmTable_Load(object sender, EventArgs e)
         {
             tableList = tableBUS.getTableCoffees();
-
             UpdateDgv(tableList);
         }
 

@@ -20,8 +20,7 @@ namespace Anh_Coffee.Business
         }
         public Bill getBillByTableID(int tableID)
         {
-            return billDAO.getBills()
-                .SingleOrDefault(x => x.TableID == tableID && x.CheckOut == null);
+            return billDAO.getBillByTableID(tableID);
         }
         public void swapTable(int oldTableID, int newTableID)
         {

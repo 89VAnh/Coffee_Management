@@ -6,6 +6,7 @@ namespace Anh_Coffee.Business
     public class AccountBUS
     {
         AccountDAO accountDAO = new AccountDAO();
+        StaffDAO staffDAO = new StaffDAO();
         public Account getAccount(string un)
         {
             return accountDAO.getAccount(un);
