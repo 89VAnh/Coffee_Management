@@ -25,6 +25,8 @@ namespace Anh_Coffee.View
         {
             billList = billBUS.getBills().Where(x => x.CheckOut != null).ToList();
             UpdateDgv(billList);
+            dtpFrom.Value = DateTime.Now;
+            dtpTo.Value = DateTime.Now;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

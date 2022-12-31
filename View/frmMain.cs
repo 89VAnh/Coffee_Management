@@ -200,7 +200,7 @@ namespace Anh_Coffee.View
                     }
                     else
                     {
-                        billInfoBUS.AddAmount(billInfo.ID, newbI.Amount, newbI.Note);
+                        billInfoBUS.AddAmount(billInfo, newbI.Amount, newbI.Note);
                     }
                     UpdateDgvBill();
 

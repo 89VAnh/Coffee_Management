@@ -19,9 +19,14 @@ namespace Anh_Coffee.Business
         {
             return billInfoDAO.getNewID();
         }
-        public void AddAmount(int bIID, int amnout, string note)
+        public void AddAmount(BillInfo bI, int amount, string note)
         {
-            billInfoDAO.AddAmount(bIID, amnout, note);
+            bI.Amount += amount;
+            if (string.IsNullOrWhiteSpace(bI.Note))
+                bI.Note = note;
+            else
+                bI.Note += ", " + note;
+            billInfoDAO.Update(bI);
         }
         public void Add(BillInfo billInfo)
         {

@@ -72,12 +72,16 @@ namespace Anh_Coffee.View
                     {
                         if (txtPw.Text.Length >= 6)
                         {
-                            accountBUS.Add(accountFromForm);
-                            MessageBox.Show("Đăng ký thành công!");
-                            frmLogin f = new frmLogin();
-                            this.Hide();
-                            f.ShowDialog();
-                            this.Close();
+                            if (txtRePw.Text == txtPw.Text)
+                            {
+                                accountBUS.Add(accountFromForm);
+                                MessageBox.Show("Đăng ký thành công!");
+                                frmLogin f = new frmLogin();
+                                this.Hide();
+                                f.ShowDialog();
+                                this.Close();
+                            }
+                            else MessageBox.Show("Nhập lại mật khẩu không trùng khớp");
                         }
                         else MessageBox.Show("Mật khẩu chứa tối thiểu 6 ký tự");
                     }

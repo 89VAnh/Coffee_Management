@@ -24,7 +24,9 @@ namespace Anh_Coffee.Business
         }
         public void swapTable(int oldTableID, int newTableID)
         {
-            billDAO.swapTable(getBillByTableID(oldTableID).ID, newTableID);
+            Bill b = getBillByTableID(oldTableID);
+            b.TableID = newTableID;
+            billDAO.Update(b);
         }
         public List<GetRevenue_Result> GetRevenue()
         {

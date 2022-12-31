@@ -6,8 +6,6 @@ namespace Anh_Coffee.DataAccess
     public class BillInfoDAO
     {
         CoffeeManagementEntities db = new CoffeeManagementEntities();
-
-
         public List<BillInfo> GetBillInfoesInBill(int id)
         {
             return db.BillInfoes.Where(x => x.BillID == id).ToList();
@@ -24,17 +22,6 @@ namespace Anh_Coffee.DataAccess
             db.BillInfoes.Add(billInfo);
             db.SaveChanges();
         }
-        public void AddAmount(int id, int amount, string note)
-        {
-            BillInfo bI = db.BillInfoes.Find(id);
-            bI.Amount += amount;
-            if (string.IsNullOrWhiteSpace(bI.Note))
-                bI.Note = note;
-            else
-                bI.Note += ", " + note;
-            db.SaveChanges();
-        }
-
         public void Update(BillInfo billInfo)
         {
             BillInfo bI = db.BillInfoes.Find(billInfo.ID);

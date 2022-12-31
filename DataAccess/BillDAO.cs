@@ -16,17 +16,6 @@ namespace Anh_Coffee.DataAccess
             return db.Bills
                 .SingleOrDefault(x => x.TableID == tableID && x.CheckOut == null);
         }
-        public void swapTable(int billID, int tableID)
-        {
-            Bill b = db.Bills.Find(billID);
-            b.TableID = tableID;
-            db.SaveChanges();
-        }
-        public List<GetRevenue_Result> GetRevenue()
-        {
-            return db.GetRevenue().ToList();
-        }
-
         public void Add(Bill bill)
         {
             db.Bills.Add(bill);
@@ -41,6 +30,9 @@ namespace Anh_Coffee.DataAccess
             b.CheckOut = bill.CheckOut;
             db.SaveChanges();
         }
-
+        public List<GetRevenue_Result> GetRevenue()
+        {
+            return db.GetRevenue().ToList();
+        }
     }
 }
